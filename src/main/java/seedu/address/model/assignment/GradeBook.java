@@ -12,24 +12,24 @@ import seedu.address.model.student.StudentId;
  * Model for a grade book.
  */
 public class GradeBook {
-    private final HashMap<StudentId, Integer> internalHashmap = new HashMap<>();
+    private final HashMap<StudentId, Double> internalHashmap = new HashMap<>();
 
     /**
      * Adds a grade to the internal hashmap
-     * @param stId the student ID.
-     * @param grade the grade value
+     * @param studentId the student ID.
+     * @param marks the grade value
      */
-    public void addGrade(StudentId stId, int grade) {
-        internalHashmap.put(stId, grade);
+    public void addGrade(StudentId studentId, Double marks) {
+        internalHashmap.put(studentId, marks);
     }
 
     /**
      * Gets a grade for a student
-     * @param stId the student ID.
+     * @param studentId the student ID.
      * @return his grade for this assignment
      */
-    public int getGradeFor(StudentId stId) {
-        return internalHashmap.get(stId);
+    public Double getGradeFor(StudentId studentId) {
+        return internalHashmap.get(studentId);
     }
 
     /**
@@ -54,7 +54,7 @@ public class GradeBook {
      * Method to streamify this object. Also, orders it in lexicographical order of Student IDs.
      * @return a Stream of entries in lexicographical order.
      */
-    public Stream<Map.Entry<StudentId, Integer>> stream() {
+    public Stream<Map.Entry<StudentId, Double>> stream() {
         return internalHashmap.entrySet().stream()
             .sorted(Comparator.comparing(o -> o.getKey().toString()));
     }

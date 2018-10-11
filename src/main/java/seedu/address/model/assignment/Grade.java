@@ -6,31 +6,31 @@ import seedu.address.model.student.StudentId;
  * Model for Grading details.
  */
 public class Grade {
-    private final String tgId;
-    private final String asId;
-    private final StudentId stId;
-    private final Integer marks;
+    private final String tutorialGroupId;
+    private final String assignmentId;
+    private final StudentId studentId;
+    private final Double assignmentMarks;
 
-    public Grade(String tgId, String asId, StudentId stId, Integer marks) {
-        this.tgId = tgId;
-        this.asId = asId;
-        this.stId = stId;
-        this.marks = marks;
+    public Grade(String tutorialGroupId, String assignmentId, StudentId studentId, Double assignmentMarks) {
+        this.tutorialGroupId = tutorialGroupId;
+        this.assignmentId = assignmentId;
+        this.studentId = studentId;
+        this.assignmentMarks = assignmentMarks;
     }
 
     public String getTgId() {
-        return tgId;
+        return tutorialGroupId;
     }
 
     public String getAsId() {
-        return asId;
+        return assignmentId;
     }
 
     public StudentId getStId() {
-        return stId;
+        return studentId;
     }
 
-    public Integer getMarks() {
-        return marks;
+    public Double getMarks() {
+        return assignmentMarks;
     }
 }

@@ -154,7 +154,7 @@ public class SuperTaClient implements ReadOnlySuperTaClient {
         }
         Assignment assignment = assignmentOptional.get();
 
-        Optional<Student> studentOptional = students.getStudentWithId(grade.getStudentId());
+        Optional<Student> studentOptional = tutorialGroup.getStudents().getStudentWithId(grade.getStudentId());
         if (!studentOptional.isPresent()) {
             throw new StudentNotFoundException();
         }

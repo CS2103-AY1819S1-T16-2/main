@@ -6,31 +6,31 @@ import seedu.superta.model.student.StudentId;
  * Model for Grading details.
  */
 public class Grade {
-    private final String tgId;
-    private final String asId;
-    private final StudentId stId;
-    private final Double marks;
+    private final String tutorialGroupId;
+    private final Title title;
+    private final StudentId studentId;
+    private final Score score;
 
-    public Grade(String tgId, String asId, StudentId stId, Double marks) {
-        this.tgId = tgId;
-        this.asId = asId;
-        this.stId = stId;
-        this.marks = marks;
+    public Grade(String tutorialGroupId, Title title, StudentId studentId, Score score) {
+        this.tutorialGroupId = tutorialGroupId;
+        this.title = title;
+        this.studentId = studentId;
+        this.score = score;
     }
 
-    public String getTgId() {
-        return tgId;
+    public String getTutorialGroupId() {
+        return tutorialGroupId;
     }
 
-    public String getAsId() {
-        return asId;
+    public Title getTitle() {
+        return title;
     }
 
-    public StudentId getStId() {
-        return stId;
+    public StudentId getStudentId() {
+        return studentId;
     }
 
-    public Double getMarks() {
-        return marks;
+    public Score getScore() {
+        return score;
     }
 }

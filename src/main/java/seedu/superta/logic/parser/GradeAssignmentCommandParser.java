@@ -10,6 +10,8 @@ import static seedu.superta.logic.parser.ParserUtil.arePrefixesPresent;
 import seedu.superta.logic.commands.GradeAssignmentCommand;
 import seedu.superta.logic.parser.exceptions.ParseException;
 import seedu.superta.model.assignment.Grade;
+import seedu.superta.model.assignment.Score;
+import seedu.superta.model.assignment.Title;
 import seedu.superta.model.student.StudentId;
 
 /**
@@ -41,13 +43,13 @@ public class GradeAssignmentCommandParser implements Parser<GradeAssignmentComma
         String tgId = ParserUtil.parseTutorialGroupId(
             argMap.getValue(PREFIX_GENERAL_TUTORIAL_GROUP_ID).get()
         );
-        String asId = ParserUtil.parseString(
+        Title asId = ParserUtil.parseTitle(
             argMap.getValue(PREFIX_GENERAL_ASSIGNMENT_ID).get()
         );
         StudentId stId = ParserUtil.parseStudentId(
             argMap.getValue(PREFIX_GENERAL_STUDENT_ID).get()
         );
-        Double marks = ParserUtil.parseDouble(
+        Score marks = ParserUtil.parseScore(
             argMap.getValue(PREFIX_ASSIGNMENT_MARKS).get()
         );
 

@@ -34,7 +34,7 @@ public class XmlAdaptedGradeBook implements XmlAdapted<GradeBook> {
             .forEach(g -> {
                 try {
                     gradebook.addGrade(
-                        ParserUtil.parseStudentId(g.getStudentId()), g.getMarks());
+                        ParserUtil.parseStudentId(g.getStudentId()), ParserUtil.parseScore(g.getScore()));
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }

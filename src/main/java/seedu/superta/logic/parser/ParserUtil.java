@@ -10,6 +10,9 @@ import java.util.stream.Stream;
 import seedu.superta.commons.core.index.Index;
 import seedu.superta.commons.util.StringUtil;
 import seedu.superta.logic.parser.exceptions.ParseException;
+import seedu.superta.model.assignment.MaxMarks;
+import seedu.superta.model.assignment.Score;
+import seedu.superta.model.assignment.Title;
 import seedu.superta.model.student.Address;
 import seedu.superta.model.student.Email;
 import seedu.superta.model.student.Feedback;
@@ -121,8 +124,49 @@ public class ParserUtil {
         return tgId.trim();
     }
 
-    public static Double parseDouble(String str) {
-        return Double.parseDouble(str.trim());
+    /**
+     * Parses a {@code String maxMarks} into a {@code MaxMarks}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code maxMarks} is invalid.
+     */
+    public static MaxMarks parseMaxMarks(String maxMarks) throws ParseException {
+        requireNonNull(maxMarks);
+        String trimmedMaxMarks = maxMarks.trim();
+        if (!MaxMarks.isValidMaxMarks(maxMarks)) {
+            throw new ParseException(MaxMarks.MESSAGE_MAX_MARKS_CONSTRAINTS);
+        }
+        return new MaxMarks(trimmedMaxMarks);
+    }
+
+    /**
+     * Parses a {@code String title} into a {@code Title}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code title} is invalid.
+     */
+    public static Title parseTitle(String title) throws ParseException {
+        requireNonNull(title);
+        String trimmedTitle = title.trim();
+        if (!Title.isValidTitle(title)) {
+            throw new ParseException(Title.MESSAGE_TITLE_CONSTRAINTS);
+        }
+        return new Title(trimmedTitle);
+    }
+
+    /**
+     * Parses a {@code String score} into a {@code Score}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code score} is invalid.
+     */
+    public static Score parseScore(String score) throws ParseException {
+        requireNonNull(score);
+        String trimmedScore = score.trim();
+        if (!Score.isValidScore(score)) {
+            throw new ParseException(Score.MESSAGE_SCORE_CONSTRAINTS);
+        }
+        return new Score(trimmedScore);
     }
 
     /**

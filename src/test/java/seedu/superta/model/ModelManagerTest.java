@@ -125,7 +125,7 @@ public class ModelManagerTest {
         modelManager.addStudentToTutorialGroup(tg.getId(), student.getStudentId());
         modelManager.addAssignment(tg.getId(), assignment);
 
-        Score marks = new Score("35.5");
+        Score marks = new Score("35");
 
         Grade grade = new Grade(tg.getId(), assignment.getTitle(), student.getStudentId(), marks);
         modelManager.grade(grade);
@@ -215,6 +215,6 @@ public class ModelManagerTest {
     }
 
     private Assignment getModelAssignment() {
-        return new Assignment(new Title("test_assignment"), new MaxMarks("40.0"));
+        return new Assignment(new Title("test assignment"), new MaxMarks("40"));
     }
 }

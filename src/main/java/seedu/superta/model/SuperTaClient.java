@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javafx.collections.ObservableList;
 import seedu.superta.model.assignment.Assignment;
@@ -171,7 +172,9 @@ public class SuperTaClient implements ReadOnlySuperTaClient {
             throw new StudentNotFoundException();
         }
         Student student = studentOptional.get();
-        List<Feedback> studentFeedback = student.getFeedback();
+        List<Feedback> studentFeedback = student.getFeedback()
+            .stream()
+            .collect(Collectors.toList());
         studentFeedback.add(feedback);
         Student editedStudent =
                 new Student(student.getName(), student.getPhone(), student.getEmail(), student.getAddress(),

@@ -167,7 +167,7 @@ public class SuperTaClientTest {
         Student student = ALICE;
 
         Grade grade = new Grade(tutorialGroup.getId(), assignment.getTitle(), student.getStudentId(),
-                new Score("40.0"));
+                new Score("40"));
         superTaClient.addStudent(student);
 
         thrown.expect(TutorialGroupNotFoundException.class);
@@ -181,7 +181,7 @@ public class SuperTaClientTest {
         Student student = ALICE;
 
         Grade grade = new Grade(tutorialGroup.getId(), assignment.getTitle(), student.getStudentId(),
-                new Score("40.0"));
+                new Score("40"));
         superTaClient.addStudent(student);
         superTaClient.addTutorialGroup(tutorialGroup);
 
@@ -197,7 +197,7 @@ public class SuperTaClientTest {
         Student student = ALICE;
 
         Grade grade = new Grade(tutorialGroup.getId(), assignment.getTitle(), student.getStudentId(),
-                new Score("40.0"));
+                new Score("40"));
         superTaClient.addStudent(student);
         superTaClient.addTutorialGroup(tutorialGroup);
 
@@ -215,7 +215,7 @@ public class SuperTaClientTest {
         superTaClient.addTutorialGroup(tutorialGroup);
         tutorialGroup.addStudent(student);
 
-        Score marks = new Score("40.0");
+        Score marks = new Score("40");
 
         Grade grade = new Grade(tutorialGroup.getId(), assignment.getTitle(), student.getStudentId(), marks);
         superTaClient.grade(grade);
@@ -235,7 +235,7 @@ public class SuperTaClientTest {
     }
 
     private Assignment getModelAssignment() {
-        return new Assignment(new Title("testing_name"), new MaxMarks("40.0"));
+        return new Assignment(new Title("testing name"), new MaxMarks("40"));
     }
 
     /**

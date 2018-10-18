@@ -4,6 +4,8 @@ import javax.xml.bind.annotation.XmlElement;
 
 import seedu.superta.commons.exceptions.IllegalValueException;
 import seedu.superta.model.assignment.Assignment;
+import seedu.superta.model.assignment.MaxMarks;
+import seedu.superta.model.assignment.Title;
 
 /**
  * Class for XML-Adapted Assignment
@@ -11,38 +13,38 @@ import seedu.superta.model.assignment.Assignment;
 public class XmlAdaptedAssignment implements XmlAdapted<Assignment> {
     public static final String MISSING_FIELD_MESSAGE_FORMAT = "Assignment's %s field is missing!";
     @XmlElement(required = true)
-    private String name;
+    private Title title;
     @XmlElement(required = true)
-    private Double maxMarks;
+    private MaxMarks maxMarks;
     @XmlElement
     private XmlAdaptedGradeBook gradebook;
 
     public XmlAdaptedAssignment() { }
 
-    public XmlAdaptedAssignment(String name, Double maxMarks, XmlAdaptedGradeBook gradebook) {
-        this.name = name;
+    public XmlAdaptedAssignment(Title title, MaxMarks maxMarks, XmlAdaptedGradeBook gradebook) {
+        this.title = title;
         this.maxMarks = maxMarks;
         this.gradebook = gradebook;
     }
 
     public XmlAdaptedAssignment(Assignment source) {
-        name = source.getName();
+        title = source.getTitle();
         maxMarks = source.getMaxMarks();
         gradebook = new XmlAdaptedGradeBook(source.getGradebook());
     }
 
     @Override
     public Assignment toModelType() throws IllegalValueException {
-        if (name == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, "name"));
+        if (title == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, "title"));
         }
         if (maxMarks == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, "ID"));
         }
 
         if (gradebook == null) {
-            return new Assignment(name, maxMarks);
+            return new Assignment(title, maxMarks);
         }
-        return new Assignment(name, maxMarks, gradebook.toModelType());
+        return new Assignment(title, maxMarks, gradebook.toModelType());
     }
 }

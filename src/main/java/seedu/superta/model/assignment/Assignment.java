@@ -1,5 +1,7 @@
 package seedu.superta.model.assignment;
 
+import static java.util.Objects.requireNonNull;
+
 import java.util.stream.Collectors;
 
 import seedu.superta.model.student.Student;
@@ -10,39 +12,45 @@ import seedu.superta.model.student.StudentId;
  * Guarantees: immutable.
  */
 public class Assignment {
-    private final String name;
-    private final Double maxMarks;
+
+    private final Title title;
+    private final MaxMarks maxMarks;
     private final GradeBook gradebook;
 
     /**
      * Constructs a {@code Assignment}.
      */
-    public Assignment(String name, Double maxMarks) {
-        this.name = name;
+    public Assignment(Title title, MaxMarks maxMarks) {
+        requireNonNull(title);
+        requireNonNull(maxMarks);
+        this.title = title;
         this.maxMarks = maxMarks;
         this.gradebook = new GradeBook();
     }
 
-    public Assignment(String name, Double maxMarks, GradeBook gradebook) {
-        this.name = name;
+    public Assignment(Title title, MaxMarks maxMarks, GradeBook gradebook) {
+        requireNonNull(title);
+        requireNonNull(maxMarks);
+        requireNonNull(gradebook);
+        this.title = title;
         this.maxMarks = maxMarks;
         this.gradebook = gradebook;
     }
 
     public Assignment(Assignment toClone) {
-        this.name = toClone.name;
+        requireNonNull(toClone);
+        this.title = toClone.title;
         this.maxMarks = toClone.maxMarks;
         gradebook = new GradeBook();
         toClone.gradebook.stream()
             .forEach(e -> gradebook.addGrade(e.getKey(), e.getValue()));
     }
 
-
-    public String getName() {
-        return name;
+    public Title getTitle() {
+        return title;
     }
 
-    public Double getMaxMarks() {
+    public MaxMarks getMaxMarks() {
         return maxMarks;
     }
 
@@ -51,13 +59,26 @@ public class Assignment {
     }
 
     /**
+     * Returns true if both assignments of the same title have at least one other identity field that is the same.
+     * This defines a weaker notion of equality between two persons.
+     */
+    public boolean isSameAssignment(Assignment otherAssignment) {
+        if (otherAssignment == this) {
+            return true;
+        }
+
+        return otherAssignment != null
+                && otherAssignment.getTitle().equals(getTitle());
+    }
+
+    /**
      * Grades a certain student with specified marks.
      * @param studentId the student id.
-     * @param marks the marks given.
+     * @param score the marks given.
      */
-    public void grade(StudentId studentId, Double marks) {
+    public void grade(StudentId studentId, Score score) {
         // TODO: Enforce marks < maxMarks, if not throw exception
-        gradebook.addGrade(studentId, marks);
+        gradebook.addGrade(studentId, score);
     }
 
     /**
@@ -69,7 +90,7 @@ public class Assignment {
 
     @Override
     public String toString() {
-        return "[Assignment]" + name
+        return "[Assignment]" + title
             + " [Max Marks: " + maxMarks + "]\n"
             + gradebook.stream()
                 .map(entry -> entry.getKey().toString() + ": " + entry.getValue())

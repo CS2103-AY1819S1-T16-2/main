@@ -12,24 +12,24 @@ import seedu.superta.model.student.StudentId;
  * Model for a grade book.
  */
 public class GradeBook {
-    private final HashMap<StudentId, Double> internalHashmap = new HashMap<>();
+    private final HashMap<StudentId, Score> internalHashmap = new HashMap<>();
 
     /**
      * Adds a grade to the internal hashmap
-     * @param stId the student ID.
-     * @param grade the grade value
+     * @param studentId the student ID.
+     * @param score the grade value
      */
-    public void addGrade(StudentId stId, Double grade) {
-        internalHashmap.put(stId, grade);
+    public void addGrade(StudentId studentId, Score score) {
+        internalHashmap.put(studentId, score);
     }
 
     /**
      * Gets a grade for a student
-     * @param stId the student ID.
+     * @param studentId the student ID.
      * @return his grade for this assignment
      */
-    public Double getGradeFor(StudentId stId) {
-        return internalHashmap.get(stId);
+    public Score getGradeFor(StudentId studentId) {
+        return internalHashmap.get(studentId);
     }
 
     /**
@@ -54,7 +54,7 @@ public class GradeBook {
      * Method to streamify this object. Also, orders it in lexicographical order of Student IDs.
      * @return a Stream of entries in lexicographical order.
      */
-    public Stream<Map.Entry<StudentId, Double>> stream() {
+    public Stream<Map.Entry<StudentId, Score>> stream() {
         return internalHashmap.entrySet().stream()
             .sorted(Comparator.comparing(o -> o.getKey().toString()));
     }

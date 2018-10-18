@@ -4,6 +4,7 @@ import java.util.Map;
 
 import javax.xml.bind.annotation.XmlElement;
 
+import seedu.superta.model.assignment.Score;
 import seedu.superta.model.student.StudentId;
 
 /**
@@ -15,25 +16,25 @@ public class XmlGrade {
     @XmlElement(required = true)
     private String studentId;
     @XmlElement(required = true)
-    private Double marks;
+    private String score;
 
     public XmlGrade() { }
 
-    public XmlGrade(String studentId, Double marks) {
+    public XmlGrade(String studentId, String score) {
         this.studentId = studentId;
-        this.marks = marks;
+        this.score = score;
     }
 
-    public XmlGrade(Map.Entry<StudentId, Double> entry) {
+    public XmlGrade(Map.Entry<StudentId, Score> entry) {
         studentId = entry.getKey().toString();
-        marks = entry.getValue();
+        score = entry.getValue().toString();
     }
 
     public String getStudentId() {
         return studentId;
     }
 
-    public Double getMarks() {
-        return marks;
+    public String getScore() {
+        return score;
     }
 }

@@ -22,12 +22,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import seedu.superta.model.assignment.Assignment;
 import seedu.superta.model.assignment.Grade;
+import seedu.superta.model.assignment.MaxMarks;
+import seedu.superta.model.assignment.Score;
+import seedu.superta.model.assignment.Title;
 import seedu.superta.model.assignment.exceptions.AssignmentNotFoundException;
 import seedu.superta.model.student.Student;
 import seedu.superta.model.student.exceptions.DuplicateStudentException;
 import seedu.superta.model.student.exceptions.StudentNotFoundException;
 import seedu.superta.model.tutorialgroup.TutorialGroup;
 import seedu.superta.model.tutorialgroup.exceptions.TutorialGroupNotFoundException;
+
 import seedu.superta.testutil.StudentBuilder;
 
 public class SuperTaClientTest {
@@ -152,7 +156,7 @@ public class SuperTaClientTest {
         Assignment assignment = getModelAssignment();
         superTaClient.addTutorialGroup(tutorialGroup);
         superTaClient.addAssignment(tutorialGroup, assignment);
-        assertTrue(superTaClient.getTutorialGroup(tutorialGroup.getId()).get().getAssignment(assignment.getName())
+        assertTrue(superTaClient.getTutorialGroup(tutorialGroup.getId()).get().getAssignment(assignment.getTitle())
                        .isPresent());
     }
 
@@ -162,7 +166,8 @@ public class SuperTaClientTest {
         Assignment assignment = getModelAssignment();
         Student student = ALICE;
 
-        Grade grade = new Grade(tutorialGroup.getId(), assignment.getName(), student.getStudentId(), 40.0);
+        Grade grade = new Grade(tutorialGroup.getId(), assignment.getTitle(), student.getStudentId(),
+                new Score("40"));
         superTaClient.addStudent(student);
 
         thrown.expect(TutorialGroupNotFoundException.class);
@@ -175,7 +180,8 @@ public class SuperTaClientTest {
         Assignment assignment = getModelAssignment();
         Student student = ALICE;
 
-        Grade grade = new Grade(tutorialGroup.getId(), assignment.getName(), student.getStudentId(), 40.0);
+        Grade grade = new Grade(tutorialGroup.getId(), assignment.getTitle(), student.getStudentId(),
+                new Score("40"));
         superTaClient.addStudent(student);
         superTaClient.addTutorialGroup(tutorialGroup);
 
@@ -190,7 +196,8 @@ public class SuperTaClientTest {
         tutorialGroup.addAssignment(assignment);
         Student student = ALICE;
 
-        Grade grade = new Grade(tutorialGroup.getId(), assignment.getName(), student.getStudentId(), 40.0);
+        Grade grade = new Grade(tutorialGroup.getId(), assignment.getTitle(), student.getStudentId(),
+                new Score("40"));
         superTaClient.addStudent(student);
         superTaClient.addTutorialGroup(tutorialGroup);
 
@@ -208,13 +215,14 @@ public class SuperTaClientTest {
         superTaClient.addTutorialGroup(tutorialGroup);
         tutorialGroup.addStudent(student);
 
-        double marks = 40.0;
+        Score marks = new Score("40");
 
-        Grade grade = new Grade(tutorialGroup.getId(), assignment.getName(), student.getStudentId(), marks);
+        Grade grade = new Grade(tutorialGroup.getId(), assignment.getTitle(), student.getStudentId(), marks);
         superTaClient.grade(grade);
 
-        assertTrue(superTaClient.getTutorialGroup(tutorialGroup.getId()).get().getAssignment(assignment.getName()).get()
-            .getGradebook().getGradeFor(student.getStudentId()).equals(marks));
+        assertTrue(superTaClient.getTutorialGroup(tutorialGroup.getId()).get()
+                .getAssignment(assignment.getTitle()).get()
+                .getGradebook().getGradeFor(student.getStudentId()).equals(marks));
     }
 
     @Test
@@ -227,7 +235,7 @@ public class SuperTaClientTest {
     }
 
     private Assignment getModelAssignment() {
-        return new Assignment("testing_name", 40.0);
+        return new Assignment(new Title("testing name"), new MaxMarks("40"));
     }
 
     /**

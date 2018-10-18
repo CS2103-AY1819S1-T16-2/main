@@ -87,27 +87,27 @@ public class SuperTaClient implements ReadOnlySuperTaClient {
     /**
      * Returns true if a tutorial group with the same id as {@code tutorialGroup} exists in the directory.
      */
-    public boolean hasTutorialGroup(String id) {
-        return tutorialGroupMaster.contains(id);
+    public boolean hasTutorialGroup(String tutorialGroupId) {
+        return tutorialGroupMaster.contains(tutorialGroupId);
     }
 
-    public Optional<TutorialGroup> getTutorialGroup(String id) {
-        return tutorialGroupMaster.getTutorialGroup(id);
+    public Optional<TutorialGroup> getTutorialGroup(String tutorialGroupId) {
+        return tutorialGroupMaster.getTutorialGroup(tutorialGroupId);
     }
 
     public Optional<Student> getStudentWithId(StudentId studentId) {
         return students.getStudentWithId(studentId);
     }
 
-    public void addStudentToTutorialGroup(TutorialGroup tg, Student st) {
-        tg.addStudent(st);
+    public void addStudentToTutorialGroup(TutorialGroup tutorialGroup, Student student) {
+        tutorialGroup.addStudent(student);
     }
 
     /**
      * Adds a tutorial group to the directory.
      */
-    public void addTutorialGroup(TutorialGroup tg) {
-        tutorialGroupMaster.addTutorialGroup(tg);
+    public void addTutorialGroup(TutorialGroup tutorialGroup) {
+        tutorialGroupMaster.addTutorialGroup(tutorialGroup);
     }
 
     /**
@@ -131,59 +131,63 @@ public class SuperTaClient implements ReadOnlySuperTaClient {
     /**
      * Adds an assignment to a tutorial group.
      */
-    public void addAssignment(TutorialGroup tg, Assignment assignment) {
+    public void addAssignment(TutorialGroup tutorialGroup, Assignment assignment) {
         requireNonNull(assignment);
-        requireNonNull(tg);
+        requireNonNull(tutorialGroup);
 
-        tg.addAssignment(assignment);
+        tutorialGroup.addAssignment(assignment);
     }
 
     /**
      * Performs an addition of a grade to an assignment gradebook, if possible.
      */
     public void grade(Grade grade) {
-        Optional<TutorialGroup> otg = tutorialGroupMaster.getTutorialGroup(grade.getTgId());
-        if (!otg.isPresent()) {
+        Optional<TutorialGroup> tutorialGroupOptional =
+                tutorialGroupMaster.getTutorialGroup(grade.getTutorialGroupId());
+        if (!tutorialGroupOptional.isPresent()) {
             throw new TutorialGroupNotFoundException();
         }
-        TutorialGroup tg = otg.get();
-        Optional<Assignment> oas = tg.getAssignment(grade.getAsId());
-        if (!oas.isPresent()) {
+        TutorialGroup tutorialGroup = tutorialGroupOptional.get();
+
+        Optional<Assignment> assignmentOptional = tutorialGroup.getAssignment(grade.getTitle());
+        if (!assignmentOptional.isPresent()) {
             throw new AssignmentNotFoundException();
         }
-        Assignment as = oas.get();
-        Optional<Student> ost = tg.getStudents().getStudentWithId(grade.getStId());
-        if (!ost.isPresent()) {
+        Assignment assignment = assignmentOptional.get();
+
+        Optional<Student> studentOptional = tutorialGroup.getStudents().getStudentWithId(grade.getStudentId());
+        if (!studentOptional.isPresent()) {
             throw new StudentNotFoundException();
         }
-        Student st = ost.get();
-        as.grade(st.getStudentId(), grade.getMarks());
+        Student student = studentOptional.get();
+        assignment.grade(student.getStudentId(), grade.getScore());
     }
 
     /**
      * Adds feedback to a student.
      */
     public void addFeedback(Feedback feedback, StudentId studentId) {
-        Optional<Student> ost = students.getStudentWithId(studentId);
-        if (!ost.isPresent()) {
+        Optional<Student> studentOptional = students.getStudentWithId(studentId);
+        if (!studentOptional.isPresent()) {
             throw new StudentNotFoundException();
         }
-        Student st = ost.get();
-        List<Feedback> studentFeedback = st.getFeedback()
-                .stream()
-                .collect(Collectors.toList());
+        Student student = studentOptional.get();
+        List<Feedback> studentFeedback = student.getFeedback()
+            .stream()
+            .collect(Collectors.toList());
         studentFeedback.add(feedback);
-        Student editedStudent = new Student(st.getName(), st.getPhone(), st.getEmail(), st.getAddress(),
-                st.getStudentId(), st.getTags(), studentFeedback);
-        updateStudent(st, editedStudent);
+        Student editedStudent =
+                new Student(student.getName(), student.getPhone(), student.getEmail(), student.getAddress(),
+                    student.getStudentId(), student.getTags(), studentFeedback);
+        updateStudent(student, editedStudent);
     }
 
     /**
      * Adds a student to the address book.
      * The student must not already exist in the address book.
      */
-    public void addStudent(Student p) {
-        students.add(p);
+    public void addStudent(Student student) {
+        students.add(student);
     }
 
     /**

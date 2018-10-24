@@ -141,7 +141,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <h3 id="adding-a-student-code-add-code"><a class="link" href="#adding-a-student-code-add-code">3.2. Adding a student: <code>add</code></a></h3>
 <div class="paragraph">
 <p>Adds a student to the directory<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS id/STUDENT_ID [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL id/STUDENT_ID [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -161,10 +161,10 @@ A student can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 id/A0123456Y</code></p>
+<p><code>add n/John Doe p/98765432 e/johnd@example.com id/A0123456Y</code></p>
 </li>
 <li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 id/A1234567T tag/needs-help</code></p>
+<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com p/1234567 id/A1234567T tag/needs-help</code></p>
 </li>
 </ul>
 </div>
@@ -187,7 +187,7 @@ Format: <code>list-tutorial-groups</code></p>
 <h3 id="editing-a-student-code-edit-code"><a class="link" href="#editing-a-student-code-edit-code">3.5. Editing a student : <code>edit</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing student in the directory.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [id/STUDENT_ID] [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [id/STUDENT_ID] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -659,8 +659,8 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS id/STUDENT_ID [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 id/A0123456Y t/needs-help t/on-loa</code></p>
+<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL id/STUDENT_ID [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com id/A0123456Y t/needs-help t/on-loa</code></p>
 </li>
 <li>
 <p><strong>Clear</strong> : <code>clear</code></p>
@@ -670,7 +670,7 @@ e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1
 e.g. <code>delete 3</code></p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [id/STUDENT_ID] [t/TAG]&#8230;&#8203;</code><br>
+<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [id/STUDENT_ID] [t/TAG]&#8230;&#8203;</code><br>
 e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
 </li>
 <li>
@@ -718,4 +718,4 @@ e.g.<code>select 2</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-24 13:00:15 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-24 13:46:19 UTC</div></div></div></body></html>

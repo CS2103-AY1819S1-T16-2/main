@@ -70,12 +70,11 @@
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
-<li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
+<li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-student">G.2. Deleting a student</a></li>
-<li><a href="#saving-data">G.3. Saving data</a></li>
+<li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
+<li><a href="#deleting-a-student">F.2. Deleting a student</a></li>
+<li><a href="#saving-data">F.3. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -177,7 +176,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 This will generate all resources required by the application and tests.</p>
 </li>
 <li>
-<p>Open <a href="https://github.com/CS2103-AY1819S1-T16-2/main/src/main/java/seedu/address/storage/XmlAdaptedPerson.java"><code>XmlAdaptedPerson.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-T16-2/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
+<p>Open <a href="https://github.com/CS2103-AY1819S1-T16-2/main/src/main/java/seedu/superta/storage/XmlAdaptedStudent.java"><code>XmlAdaptedStudent.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-T16-2/main/src/main/java/seedu/superta/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -200,7 +199,7 @@ This will generate all resources required by the application and tests.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Run the <code>seedu.address.MainApp</code> and try a few commands</p>
+<p>Run the <code>seedu.superta.MainApp</code> and try a few commands</p>
 </li>
 <li>
 <p><a href="#Testing">Run the tests</a> to ensure they all pass.</p>
@@ -245,10 +244,10 @@ This will generate all resources required by the application and tests.</p>
 <div class="sect3">
 <h4 id="updating-documentation-to-match-your-fork"><a class="link" href="#updating-documentation-to-match-your-fork">2.4.2. Updating documentation to match your fork</a></h4>
 <div class="paragraph">
-<p>After forking the repo, the documentation will still have the SE-EDU branding and refer to the <code>se-edu/addressbook-level4</code> repo.</p>
+<p>After forking the repo, the documentation will still refer to the <code>CS2103-AY1819S1-T16-2</code> repo.</p>
 </div>
 <div class="paragraph">
-<p>If you plan to develop this fork as a separate product (i.e. instead of contributing to <code>se-edu/addressbook-level4</code>), you should do the following:</p>
+<p>If you plan to develop this fork as a separate product (i.e. instead of contributing to <code>CS2103-AY1819S1-T16-2</code>), you should do the following:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -411,13 +410,13 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </div>
 <h4 id="events-driven-nature-of-the-design" class="discrete">Events-Driven nature of the design</h4>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact for the scenario where the user issues the command <code>delete 1</code>.</p>
+<p>The <em>Sequence Diagram</em> below shows how the components interact for the scenario where the user issues the command <code>delete-assignment as/lab1 tg/04a</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SDforDeletePerson.png" alt="SDforDeletePerson" width="800">
+<img src="images/SDforDeleteAssignment.png" alt="SDforDeleteAssignment" width="800">
 </div>
-<div class="title">Figure 3. Component interactions for <code>delete 1</code> command (part 1)</div>
+<div class="title">Figure 3. Component interactions for <code>delete-assignment as/lab1 tg/04a</code> command (part 1)</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -426,7 +425,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Note how the <code>Model</code> simply raises a <code>AddressBookChangedEvent</code> when the Address Book data are changed, instead of asking the <code>Storage</code> to save the updates to the hard disk.
+Note how the <code>Model</code> simply raises a <code>SuperTaChangedEvent</code> when the SuperTA client data is changed, instead of asking the <code>Storage</code> to save the updates to the hard disk.
 </td>
 </tr>
 </table>
@@ -436,9 +435,9 @@ Note how the <code>Model</code> simply raises a <code>AddressBookChangedEvent</c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SDforDeletePersonEventHandling.png" alt="SDforDeletePersonEventHandling" width="800">
+<img src="images/SDforDeleteAssignmentEventHandling.png" alt="SDforDeleteAssignmentEventHandling" width="800">
 </div>
-<div class="title">Figure 4. Component interactions for <code>delete 1</code> command (part 2)</div>
+<div class="title">Figure 4. Component interactions for <code>delete-assignment as/lab1 tg/04a</code> command (part 2)</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -465,7 +464,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="title">Figure 5. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-T16-2/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-T16-2/main/src/main/java/seedu/superta/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
@@ -500,12 +499,12 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/CS2103-AY1819S1-T16-2/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/CS2103-AY1819S1-T16-2/main/src/main/java/seedu/superta/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
+<p><code>Logic</code> uses the <code>SuperTaClientParser</code> class to parse the user command.</p>
 </li>
 <li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
@@ -523,9 +522,9 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DeletePersonSdForLogic.png" alt="DeletePersonSdForLogic" width="800">
+<img src="images/DeleteAssignmentSdForLogic.png" alt="DeleteAssignmentSdForLogic" width="800">
 </div>
-<div class="title">Figure 7. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 7. Interactions Inside the Logic Component for the <code>delete-assignment as/lab1 tg/04a</code> Command</div>
 </div>
 </div>
 <div class="sect2">
@@ -537,7 +536,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="title">Figure 8. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-T16-2/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-T16-2/main/src/main/java/seedu/superta/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -548,10 +547,10 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Address Book data.</p>
+<p>stores the SuperTA client data.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>exposes an unmodifiable <code>ObservableList&lt;Student&gt;</code> and <code>ObservableList&lt;TutorialGroup&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
@@ -565,7 +564,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>Person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
+As a more OOP model, we can store a <code>Tag</code> list in <code>SuperTaClient</code>, which <code>Student</code> can reference. This would allow <code>SuperTaClient</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Student</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
 <br>
 <span class="image"><img src="images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800"></span>
 </td>
@@ -582,7 +581,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="title">Figure 9. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-T16-2/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-T16-2/main/src/main/java/seedu/superta/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -593,7 +592,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the Address Book data in xml format and read it back.</p>
+<p>can save the SuperTA client data in xml format and read it back.</p>
 </li>
 </ul>
 </div>
@@ -690,7 +689,7 @@ The <code>TutorialGroup</code> model houses all other object instances that are 
 <div class="sect2">
 <h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.8. Common classes</a></h3>
 <div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
+<p>Classes used by multiple components are in the <code>seedu.superta.commons</code> package.</p>
 </div>
 </div>
 </div>
@@ -706,31 +705,31 @@ The <code>TutorialGroup</code> model houses all other object instances that are 
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
+<p>The undo/redo mechanism is facilitated by <code>VersionedSuperTaClient</code>.
+It extends <code>SuperTaClient</code> with an undo/redo history, stored internally as an <code>superTaClientStateList</code> and <code>currentStatePointer</code>.
 Additionally, it implements the following operations:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
+<p><code>VersionedSuperTaClient#commit()</code>&#8201;&#8212;&#8201;Saves the current SuperTA client state in its history.</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
+<p><code>VersionedSuperTaClient#undo()</code>&#8201;&#8212;&#8201;Restores the previous SuperTA client state from its history.</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
+<p><code>VersionedSuperTaClient#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone SuperTA client state from its history.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
+<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitSuperTaClient()</code>, <code>Model#undoSuperTaClient()</code> and <code>Model#redoSuperTaClient()</code> respectively.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
+<p>Step 1. The user launches the application for the first time. The <code>VersionedSuperTaClient</code> will be initialized with the initial SuperTA client state, and the <code>currentStatePointer</code> pointing to that single SuperTA client state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -738,7 +737,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th student in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
+<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th student in the SuperTA client. The <code>delete</code> command calls <code>Model#commitSuperTaClient()</code>, causing the modified state of the SuperTA client after the <code>delete 5</code> command executes to be saved in the <code>superTaClientStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted SuperTA client state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -746,7 +745,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new student. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
+<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new student. The <code>add</code> command also calls <code>Model#commitSuperTaClient()</code>, causing another modified SuperTA client state to be saved into the <code>superTaClientStateList</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -760,13 +759,13 @@ Additionally, it implements the following operations:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
+If a command fails its execution, it will not call <code>Model#commitSuperTaClient()</code>, so the SuperTA client state will not be saved into the <code>superTaClientStateList</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 4. The user now decides that adding the student was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
+<p>Step 4. The user now decides that adding the student was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoSuperTaClient()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous SuperTA client state, and restores the SuperTA client to that state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -780,7 +779,7 @@ If a command fails its execution, it will not call <code>Model#commitAddressBook
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
+If the <code>currentStatePointer</code> is at index 0, pointing to the initial SuperTA client state, then there are no previous SuperTA client states to restore. The <code>undo</code> command uses <code>Model#canUndoSuperTaClient()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
 </td>
 </tr>
 </table>
@@ -794,7 +793,7 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial a
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
+<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoSuperTaClient()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the SuperTA client to that state.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -803,13 +802,13 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial a
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+If the <code>currentStatePointer</code> is at index <code>superTaClientStateList.size() - 1</code>, pointing to the latest SuperTA client state, then there are no undone SuperTA client states to restore. The <code>redo</code> command uses <code>Model#canRedoSuperTaClient()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
+<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the SuperTA client, such as <code>list</code>, will usually not call <code>Model#commitSuperTaClient()</code>, <code>Model#undoSuperTaClient()</code> or <code>Model#redoSuperTaClient()</code>. Thus, the <code>superTaClientStateList</code> remains unchanged.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -817,7 +816,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>superTaClientStateList</code>, all SuperTA client states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -840,7 +839,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
+<p><strong>Alternative 1 (current choice):</strong> Saves the entire SuperTA client.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -873,14 +872,14 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of SuperTA client states.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
 </li>
 <li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
+<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedSuperTaClient</code>.</p>
 </li>
 </ul>
 </div>
@@ -1242,7 +1241,7 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <p><em>System Tests</em> that test the entire App by simulating user actions on the GUI. These are in the <code>systemtests</code> package.</p>
 </li>
 <li>
-<p><em>Unit tests</em> that test the individual components. These are in <code>seedu.address.ui</code> package.</p>
+<p><em>Unit tests</em> that test the individual components. These are in <code>seedu.superta.ui</code> package.</p>
 </li>
 </ol>
 </div>
@@ -1253,15 +1252,15 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <ol class="loweralpha" type="a">
 <li>
 <p><em>Unit tests</em> targeting the lowest level methods/classes.<br>
-e.g. <code>seedu.address.commons.StringUtilTest</code></p>
+e.g. <code>seedu.superta.commons.StringUtilTest</code></p>
 </li>
 <li>
 <p><em>Integration tests</em> that are checking the integration of multiple code units (those code units are assumed to be working).<br>
-e.g. <code>seedu.address.storage.StorageManagerTest</code></p>
+e.g. <code>seedu.superta.storage.StorageManagerTest</code></p>
 </li>
 <li>
 <p>Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together.<br>
-e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
+e.g. <code>seedu.superta.logic.LogicManagerTest</code></p>
 </li>
 </ol>
 </div>
@@ -1339,7 +1338,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <div class="sect2">
 <h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">7.6. Managing Dependencies</a></h3>
 <div class="paragraph">
-<p>A project often depends on third-party libraries. For example, Address Book depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
+<p>A project often depends on third-party libraries. For example, SuperTA depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
 a. Include those libraries in the repo (this bloats the repo size)<br>
 b. Require developers to download those libraries manually (this creates extra work for developers)</p>
 </div>
@@ -1758,44 +1757,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -1813,7 +1775,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1851,7 +1813,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-student"><a class="link" href="#deleting-a-student">G.2. Deleting a student</a></h3>
+<h3 id="deleting-a-student"><a class="link" href="#deleting-a-student">F.2. Deleting a student</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1883,7 +1845,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">F.3. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1903,4 +1865,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 13:15:38 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 03:45:16 UTC</div></div></div></body></html>

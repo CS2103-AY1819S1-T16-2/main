@@ -27,18 +27,18 @@
 <li><a href="#view-tutorial-group-code-view-tutorial-group-code">3.12. View Tutorial Group: <code>view-tutorial-group</code></a></li>
 <li><a href="#add-to-tutorial-group-code-add-to-tutorial-group-code">3.13. Add to Tutorial Group: <code>add-to-tutorial-group</code></a></li>
 <li><a href="#remove-from-tutorial-group-code-remove-from-tutorial-group-code">3.14. Remove from Tutorial Group: <code>remove-from-tutorial-group</code></a></li>
-<li><a href="#filter-by-tutorial-group-code-filter-code">3.15. Filter by Tutorial Group: <code>filter</code></a></li>
-<li><a href="#create-attendance-code-create-attendance-code">3.16. Create Attendance: <code>create-attendance</code></a></li>
-<li><a href="#mark-attendance-code-mark-attendance-code">3.17. Mark Attendance: <code>mark-attendance</code></a></li>
-<li><a href="#creating-an-assignment-code-create-assignment-code">3.18. Creating an Assignment: <code>create-assignment</code></a></li>
-<li><a href="#deleting-an-assignment-code-delete-assignment-code">3.19. Deleting an Assignment: <code>delete-assignment</code></a></li>
-<li><a href="#grade-assignment-for-student-code-grade-code">3.20. Grade Assignment for Student: <code>grade</code></a></li>
-<li><a href="#view-assignment-details-code-view-assignment-code">3.21. View Assignment Details: <code>view-assignment</code></a></li>
-<li><a href="#feedback-to-student-code-feedback-code">3.22. Feedback to Student: <code>feedback</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">3.23. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.24. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.25. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.26. Exiting the program : <code>exit</code></a></li>
+<li><a href="#create-attendance-code-create-attendance-code">3.15. Create Attendance: <code>create-attendance</code></a></li>
+<li><a href="#mark-attendance-code-mark-attendance-code">3.16. Mark Attendance: <code>mark-attendance</code></a></li>
+<li><a href="#creating-an-assignment-code-create-assignment-code">3.17. Creating an Assignment: <code>create-assignment</code></a></li>
+<li><a href="#deleting-an-assignment-code-delete-assignment-code">3.18. Deleting an Assignment: <code>delete-assignment</code></a></li>
+<li><a href="#grade-assignment-for-student-code-grade-code">3.19. Grade Assignment for Student: <code>grade</code></a></li>
+<li><a href="#view-assignment-details-code-view-assignment-code">3.20. View Assignment Details: <code>view-assignment</code></a></li>
+<li><a href="#feedback-to-student-code-feedback-code">3.21. Feedback to Student: <code>feedback</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">3.22. Listing entered commands : <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.23. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.24. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.25. Exiting the program : <code>exit</code></a></li>
+<li><a href="#filter-by-tutorial-group-code-filter-code">3.26. Filter by Tutorial Group: <code>filter</code></a></li>
 <li><a href="#sort-by-assignment-grade-code-sort-code">3.27. Sort by assignment grade: <code>sort</code></a></li>
 <li><a href="#saving-the-data">3.28. Saving the data</a></li>
 </ul>
@@ -363,12 +363,12 @@ Format: <code>select INDEX</code></p>
 <li>
 <p><code>list</code><br>
 <code>select 2</code><br>
-Selects the 2nd student in the address book.</p>
+Selects the 2nd student in the list.</p>
 </li>
 <li>
 <p><code>find Betsy</code><br>
 <code>select 1</code><br>
-Selects the 1st studenot in the results of the <code>find</code> command.</p>
+Selects the 1st student in the results of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
@@ -394,8 +394,19 @@ Views the information of the student with the ID A0166733Y.</p>
 <div class="sect2">
 <h3 id="creating-a-tutorial-group-code-create-tutorial-group-code"><a class="link" href="#creating-a-tutorial-group-code-create-tutorial-group-code">3.10. Creating a Tutorial Group: <code>create-tutorial-group</code></a></h3>
 <div class="paragraph">
-<p>Creates a tutorial group with an identifier. If there is already a tutorial group with the same identifier, the identifier will have a random suffix appended to it.<br>
+<p>Creates a tutorial group with an identifier.<br>
 Format: <code>create-tutorial-group n/NAME id/TUTORIAL-GROUP-ID</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If there is already a tutorial group with the same identifier, the identifier will have a random suffix appended to it.<br></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -403,11 +414,13 @@ Format: <code>create-tutorial-group n/NAME id/TUTORIAL-GROUP-ID</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>create-tutorial-group n/CS1101S Studio 04A id/04a</code>
-Creates a tutorial group named <code>CS1101S Studio 04A</code> with the identifier <code>04a</code>.</p>
+<p><code>create-tutorial-group n/CS1101S Studio 04A id/04a</code><br>
+Creates a tutorial group named <code>CS1101S Studio 04A</code> with the identifier <code>04a</code>.<br></p>
 </li>
 <li>
-<p>If I run the command above twice, my second <code>TutorialGroup</code> will have a random suffix appended to its ID. For example, its ID might become <code>04a-dusty123</code>.The ID of the created tutorial group will be shown in the command result panel.</p>
+<p><code>create-tutorial-group n/CS2103T id/04b</code><br>
+<code>create-tutorial-group n/CS2103T id/04b</code><br>
+Creates a tutorial group named CS2103T with the identifier 04b and a second tutorial group with the same name and identifier 04b-dusty123.</p>
 </li>
 </ul>
 </div>
@@ -424,7 +437,7 @@ Format: <code>delete-tutorial-group id/TUTORIAL_GROUP_ID</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete-tutorial-group id/04a</code>
+<p><code>delete-tutorial-group id/04a</code><br>
 Deletes a tutorial group with the identifier <code>04a</code>.</p>
 </li>
 </ul>
@@ -442,7 +455,7 @@ Format: <code>view-tutorial-group id/TUTORIAL_GROUP_ID</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>view-tutorial-group id/04a</code>
+<p><code>view-tutorial-group id/04a</code><br>
 Displays the <code>04a</code> tutorial group&#8217;s information .</p>
 </li>
 </ul>
@@ -460,7 +473,7 @@ Format: <code>add-to-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code></p
 <div class="ulist">
 <ul>
 <li>
-<p><code>add-to-tutorial-group tg/04a st/A1231231Y</code>
+<p><code>add-to-tutorial-group tg/04a st/A1231231Y</code><br>
 Adds the student with student IDs <code>A1231231Y</code> to the tutorial group with an ID of <code>04a</code>.</p>
 </li>
 </ul>
@@ -469,8 +482,8 @@ Adds the student with student IDs <code>A1231231Y</code> to the tutorial group w
 <div class="sect2">
 <h3 id="remove-from-tutorial-group-code-remove-from-tutorial-group-code"><a class="link" href="#remove-from-tutorial-group-code-remove-from-tutorial-group-code">3.14. Remove from Tutorial Group: <code>remove-from-tutorial-group</code></a></h3>
 <div class="paragraph">
-<p>Removes students from a tutorial group.<br>
-Format: <code>remove-from-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID [st/STUDENT_ID]&#8230;&#8203;</code></p>
+<p>Removes a student from a tutorial group.<br>
+Format: <code>remove-from-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -478,60 +491,34 @@ Format: <code>remove-from-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID [st/
 <div class="ulist">
 <ul>
 <li>
-<p><code>remove-from-tutorial-group tg/1 st/A1231231Y st/A2342342T</code>
-Removes the students with student IDs <code>A1231231Y</code> and <code>A2342342T</code> from the tutorial group with an ID of <code>1</code>.</p>
+<p><code>remove-from-tutorial-group tg/1 st/A1231231Y</code><br>
+Removes the student with student ID <code>A1231231Y</code> from the tutorial group with an ID of <code>1</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="filter-by-tutorial-group-code-filter-code"><a class="link" href="#filter-by-tutorial-group-code-filter-code">3.15. Filter by Tutorial Group: <code>filter</code></a></h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
+<h3 id="create-attendance-code-create-attendance-code"><a class="link" href="#create-attendance-code-create-attendance-code">3.15. Create Attendance: <code>create-attendance</code></a></h3>
 <div class="paragraph">
-<p>Coming in 2.0</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Filters students by a specific tutorial group ID.
-Format: <code>filter tg/TUTORIAL_GROUP_ID</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>filter tg/1</code>
-Shows a list of all the students in the tutorial group with an ID of <code>1</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="create-attendance-code-create-attendance-code"><a class="link" href="#create-attendance-code-create-attendance-code">3.16. Create Attendance: <code>create-attendance</code></a></h3>
-<div class="paragraph">
-<p>Creates an attendance listing for a specific tutorial group, identified by its ID.
+<p>Creates an attendance listing for a specific tutorial group, identified by its ID.<br>
 Format: <code>create-attendance tg/TUTORIAL_GROUP_ID n/NAME</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:
-* <code>create-attendance tg/1 n/W4 Tutorial</code>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>create-attendance tg/1 n/W4 Tutorial</code><br>
 Creates an attendance named <code>W4 Tutorial</code> for the tutorial group with an ID of <code>1</code>.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="mark-attendance-code-mark-attendance-code"><a class="link" href="#mark-attendance-code-mark-attendance-code">3.17. Mark Attendance: <code>mark-attendance</code></a></h3>
+<h3 id="mark-attendance-code-mark-attendance-code"><a class="link" href="#mark-attendance-code-mark-attendance-code">3.16. Mark Attendance: <code>mark-attendance</code></a></h3>
 <div class="paragraph">
-<p>Marks attendance for students from a specific tutorial group and session name, identified by its ID and name.
+<p>Marks attendance for students from a specific tutorial group and session name, identified by its ID and name.<br>
 Format: <code>mark-attendance tg/TUTORIAL_GROUP_ID n/NAME st/STUDENT_ID &#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
@@ -547,10 +534,21 @@ Marks students with IDs <code>A1234567T</code> and <code>A0123456Y</code> as pre
 </div>
 </div>
 <div class="sect2">
-<h3 id="creating-an-assignment-code-create-assignment-code"><a class="link" href="#creating-an-assignment-code-create-assignment-code">3.18. Creating an Assignment: <code>create-assignment</code></a></h3>
+<h3 id="creating-an-assignment-code-create-assignment-code"><a class="link" href="#creating-an-assignment-code-create-assignment-code">3.17. Creating an Assignment: <code>create-assignment</code></a></h3>
 <div class="paragraph">
-<p>Creates an assignment for a specific tutorial group. In future commands, assignments are referenced to by its name.
+<p>Creates an assignment for a specific tutorial group.<br>
 Format: <code>create-assignment tg/TUTORIAL_GROUP_ID n/ASSIGNMENT_NAME m/MAX_MARKS</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>In future commands, assignments are referenced to by its name.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -558,14 +556,14 @@ Format: <code>create-assignment tg/TUTORIAL_GROUP_ID n/ASSIGNMENT_NAME m/MAX_MAR
 <div class="ulist">
 <ul>
 <li>
-<p><code>create-assignment tg/04a n/lab1 m/40</code>
+<p><code>create-assignment tg/04a n/lab1 m/40</code><br>
 Creates an assignment named <code>lab1</code> for the tutorial group with an ID of <code>04a</code>, with the maximum marks for this assignment as <code>40</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-an-assignment-code-delete-assignment-code"><a class="link" href="#deleting-an-assignment-code-delete-assignment-code">3.19. Deleting an Assignment: <code>delete-assignment</code></a></h3>
+<h3 id="deleting-an-assignment-code-delete-assignment-code"><a class="link" href="#deleting-an-assignment-code-delete-assignment-code">3.18. Deleting an Assignment: <code>delete-assignment</code></a></h3>
 <div class="paragraph">
 <p>Deletes an existing assignment for a specific tutorial group.<br>
 Format: <code>delete-assignment as/ASSIGNMENT_NAME tg/TUTORIAL_GROUP_ID</code></p>
@@ -576,16 +574,16 @@ Format: <code>delete-assignment as/ASSIGNMENT_NAME tg/TUTORIAL_GROUP_ID</code></
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete-assignment as/lab1 tg/04a</code>
+<p><code>delete-assignment as/lab1 tg/04a</code><br>
 Deletes an assignment named 'lab1' from the tutorial group with an ID of '04a'.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="grade-assignment-for-student-code-grade-code"><a class="link" href="#grade-assignment-for-student-code-grade-code">3.20. Grade Assignment for Student: <code>grade</code></a></h3>
+<h3 id="grade-assignment-for-student-code-grade-code"><a class="link" href="#grade-assignment-for-student-code-grade-code">3.19. Grade Assignment for Student: <code>grade</code></a></h3>
 <div class="paragraph">
-<p>Enters a grade for a student for a specific assignment, identified by its ID.
+<p>Enters a grade for a student for a specific assignment, identified by its ID.<br>
 Format: <code>grade tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME st/STUDENT_ID m/MARKS</code></p>
 </div>
 <div class="paragraph">
@@ -594,14 +592,14 @@ Format: <code>grade tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME st/STUDENT_ID m/MARK
 <div class="ulist">
 <ul>
 <li>
-<p><code>grade tg/04a as/lab1 st/A0166733Y m/40</code>
+<p><code>grade tg/04a as/lab1 st/A0166733Y m/40</code><br>
 Creates a grade with marks <code>40</code> for the student with an ID of <code>A0166733Y</code> in the tutorial group <code>04a</code> for the assignment with ID <code>lab1</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="view-assignment-details-code-view-assignment-code"><a class="link" href="#view-assignment-details-code-view-assignment-code">3.21. View Assignment Details: <code>view-assignment</code></a></h3>
+<h3 id="view-assignment-details-code-view-assignment-code"><a class="link" href="#view-assignment-details-code-view-assignment-code">3.20. View Assignment Details: <code>view-assignment</code></a></h3>
 <div class="paragraph">
 <p>Views an assignment details.<br>
 Format: <code>view-assignment tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME</code></p>
@@ -612,16 +610,16 @@ Format: <code>view-assignment tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>view-assignment tg/04a as/lab1</code>
+<p><code>view-assignment tg/04a as/lab1</code><br>
 Views the assignment details for the <code>lab1</code> assignment in the <code>04a</code> tutorial group.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="feedback-to-student-code-feedback-code"><a class="link" href="#feedback-to-student-code-feedback-code">3.22. Feedback to Student: <code>feedback</code></a></h3>
+<h3 id="feedback-to-student-code-feedback-code"><a class="link" href="#feedback-to-student-code-feedback-code">3.21. Feedback to Student: <code>feedback</code></a></h3>
 <div class="paragraph">
-<p>Adds feedback to a student with a specified Student ID.
+<p>Adds feedback to a student with a specified Student ID.<br>
 Format: <code>feedback id/STUDENT_ID f/FEEDBACK</code></p>
 </div>
 <div class="paragraph">
@@ -630,14 +628,14 @@ Format: <code>feedback id/STUDENT_ID f/FEEDBACK</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>feedback id/A1234566T f/Is generally attentive during class. However, needs to speak up more.</code>
+<p><code>feedback id/A1234566T f/Is generally attentive during class. However, needs to speak up more.</code><br>
 Adds the given feedback <code>Is generally attentive during class. However, needs to speak up more.</code> to the student with Student ID <code>A1234566T</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.23. Listing entered commands : <code>history</code></a></h3>
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.22. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
 Format: <code>history</code></p>
@@ -658,7 +656,7 @@ Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.24. Undoing previous command : <code>undo</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.23. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
 <p>Restores the client to the state before the previous <em>undoable</em> command was executed.<br>
 Format: <code>undo</code></p>
@@ -733,17 +731,49 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.25. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.24. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clears all students from the client.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.26. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.25. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filter-by-tutorial-group-code-filter-code"><a class="link" href="#filter-by-tutorial-group-code-filter-code">3.26. Filter by Tutorial Group: <code>filter</code></a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Coming in 2.0</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Filters students by a specific tutorial group ID.<br>
+Format: <code>filter tg/TUTORIAL_GROUP_ID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>filter tg/1</code><br>
+Shows a list of all the students in the tutorial group with an ID of <code>1</code>.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -831,7 +861,7 @@ e.g. <code>delete 3</code></p>
 e.g.<code>select 2</code></p>
 </li>
 <li>
-<p><strong>View Feedback</strong>: <code>view id/STUDENT_ID</code>
+<p><strong>View Feedback</strong>: <code>view id/STUDENT_ID</code><br>
 e.g. <code>view id/A0166733Y</code></p>
 </li>
 <li>
@@ -843,11 +873,23 @@ e.g. <code>create-tutorial-group n/CS1101S Studio 04A id/04a</code></p>
 e.g. <code>delete-tutorial-group id/04a</code></p>
 </li>
 <li>
-<p><strong>Add Student to Tutorial Group</strong>: <code>add-to-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code>
+<p><strong>Add Student to Tutorial Group</strong>: <code>add-to-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code><br>
 e.g. <code>add-to-tutorial-group tg/04a st/A0166733Y</code></p>
 </li>
 <li>
-<p><strong>Create Assignment</strong>: <code>create-assignment tg/TUTORIAL_GROUP_ID n/ASSIGNMENT_NAME m/MAX_MARKS</code>
+<p><strong>Remove Student from Tutorial Group</strong>: <code>remove-from-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code><br>
+e.g. <code>remove-from-tutorial-group tg/04a st/A0166733Y</code></p>
+</li>
+<li>
+<p><strong>Create Attendance</strong>: <code>create-attendance tg/[TUTORIAL_GROUP_ID] n/[NAME]</code><br>
+e.g. <code>create-attendance tg/1 n/W4 Tutorial</code></p>
+</li>
+<li>
+<p><strong>Mark Attendance</strong>: <code>mark-attendance tg/TUTORIAL_GROUP_ID n/NAME st/STUDENT_ID &#8230;&#8203;</code><br>
+e.g. <code>mark-attendance tg/1 n/W4 Tutorial st/A1234567T st/A0123456Y</code></p>
+</li>
+<li>
+<p><strong>Create Assignment</strong>: <code>create-assignment tg/TUTORIAL_GROUP_ID n/ASSIGNMENT_NAME m/MAX_MARKS</code><br>
 e.g. <code>create-assignment tg/04a n/lab1 m/40</code></p>
 </li>
 <li>
@@ -855,23 +897,15 @@ e.g. <code>create-assignment tg/04a n/lab1 m/40</code></p>
 e.g. <code>delete-assignment as/lab1 tg/04a</code></p>
 </li>
 <li>
-<p><strong>Grade Assignment</strong>: <code>grade tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME st/STUDENT_ID m/MARKS</code>
+<p><strong>Grade Assignment</strong>: <code>grade tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME st/STUDENT_ID m/MARKS</code><br>
 e.g. <code>grade tg/04a as/lab1 st/A0166733Y m/30</code></p>
 </li>
 <li>
-<p><strong>View Assignment Details</strong>: <code>view-assignment tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME</code>
+<p><strong>View Assignment Details</strong>: <code>view-assignment tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME</code><br>
 e.g. <code>view-assignment tg/04a as/lab1</code></p>
 </li>
 <li>
-<p><strong>Create Attendance</strong>: <code>create-attendance tg/[TUTORIAL_GROUP_ID] n/[NAME]</code>
-e.g. <code>create-attendance tg/1 n/W4 Tutorial</code></p>
-</li>
-<li>
-<p><strong>Mark Attendance</strong>: <code>mark-attendance tg/TUTORIAL_GROUP_ID n/NAME st/STUDENT_ID &#8230;&#8203;</code>
-e.g. <code>mark-attendance tg/1 n/W4 Tutorial st/A1234567T st/A0123456Y</code></p>
-</li>
-<li>
-<p><strong>Feedback</strong>: <code>feedback id/[STUDENT_ID] f/[FEEDBACK]</code>
+<p><strong>Feedback</strong>: <code>feedback id/[STUDENT_ID] f/[FEEDBACK]</code><br>
 e.g. <code>feedback id/A0166733Y f/Likes to sleep in class</code></p>
 </li>
 <li>
@@ -889,4 +923,4 @@ e.g. <code>feedback id/A0166733Y f/Likes to sleep in class</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 17:35:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-05 03:06:04 UTC</div></div></div></body></html>

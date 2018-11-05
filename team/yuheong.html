@@ -138,7 +138,7 @@ e.g. <code>delete 3</code></p>
 e.g.<code>select 2</code></p>
 </li>
 <li>
-<p><strong>View Feedback</strong>: <code>view id/STUDENT_ID</code>
+<p><strong>View Feedback</strong>: <code>view id/STUDENT_ID</code><br>
 e.g. <code>view id/A0166733Y</code></p>
 </li>
 <li>
@@ -150,11 +150,23 @@ e.g. <code>create-tutorial-group n/CS1101S Studio 04A id/04a</code></p>
 e.g. <code>delete-tutorial-group id/04a</code></p>
 </li>
 <li>
-<p><strong>Add Student to Tutorial Group</strong>: <code>add-to-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code>
+<p><strong>Add Student to Tutorial Group</strong>: <code>add-to-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code><br>
 e.g. <code>add-to-tutorial-group tg/04a st/A0166733Y</code></p>
 </li>
 <li>
-<p><strong>Create Assignment</strong>: <code>create-assignment tg/TUTORIAL_GROUP_ID n/ASSIGNMENT_NAME m/MAX_MARKS</code>
+<p><strong>Remove Student from Tutorial Group</strong>: <code>remove-from-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code><br>
+e.g. <code>remove-from-tutorial-group tg/04a st/A0166733Y</code></p>
+</li>
+<li>
+<p><strong>Create Attendance</strong>: <code>create-attendance tg/[TUTORIAL_GROUP_ID] n/[NAME]</code><br>
+e.g. <code>create-attendance tg/1 n/W4 Tutorial</code></p>
+</li>
+<li>
+<p><strong>Mark Attendance</strong>: <code>mark-attendance tg/TUTORIAL_GROUP_ID n/NAME st/STUDENT_ID &#8230;&#8203;</code><br>
+e.g. <code>mark-attendance tg/1 n/W4 Tutorial st/A1234567T st/A0123456Y</code></p>
+</li>
+<li>
+<p><strong>Create Assignment</strong>: <code>create-assignment tg/TUTORIAL_GROUP_ID n/ASSIGNMENT_NAME m/MAX_MARKS</code><br>
 e.g. <code>create-assignment tg/04a n/lab1 m/40</code></p>
 </li>
 <li>
@@ -162,23 +174,15 @@ e.g. <code>create-assignment tg/04a n/lab1 m/40</code></p>
 e.g. <code>delete-assignment as/lab1 tg/04a</code></p>
 </li>
 <li>
-<p><strong>Grade Assignment</strong>: <code>grade tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME st/STUDENT_ID m/MARKS</code>
+<p><strong>Grade Assignment</strong>: <code>grade tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME st/STUDENT_ID m/MARKS</code><br>
 e.g. <code>grade tg/04a as/lab1 st/A0166733Y m/30</code></p>
 </li>
 <li>
-<p><strong>View Assignment Details</strong>: <code>view-assignment tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME</code>
+<p><strong>View Assignment Details</strong>: <code>view-assignment tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME</code><br>
 e.g. <code>view-assignment tg/04a as/lab1</code></p>
 </li>
 <li>
-<p><strong>Create Attendance</strong>: <code>create-attendance tg/[TUTORIAL_GROUP_ID] n/[NAME]</code>
-e.g. <code>create-attendance tg/1 n/W4 Tutorial</code></p>
-</li>
-<li>
-<p><strong>Mark Attendance</strong>: <code>mark-attendance tg/TUTORIAL_GROUP_ID n/NAME st/STUDENT_ID &#8230;&#8203;</code>
-e.g. <code>mark-attendance tg/1 n/W4 Tutorial st/A1234567T st/A0123456Y</code></p>
-</li>
-<li>
-<p><strong>Feedback</strong>: <code>feedback id/[STUDENT_ID] f/[FEEDBACK]</code>
+<p><strong>Feedback</strong>: <code>feedback id/[STUDENT_ID] f/[FEEDBACK]</code><br>
 e.g. <code>feedback id/A0166733Y f/Likes to sleep in class</code></p>
 </li>
 <li>
@@ -217,4 +221,4 @@ e.g. <code>feedback id/A0166733Y f/Likes to sleep in class</code></p>
 <div class="sectionbody">
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 17:35:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-05 03:06:04 UTC</div></div></div></body></html>

@@ -92,10 +92,8 @@ public class AssignmentDetailPanel extends ViewPanelContent {
                 return;
             }
             Assignment fromModel = optAssignment.get();
-            if (fromModel.equals(assignment)) {
-                this.assignment = fromModel;
-                render();
-            }
+            this.assignment = fromModel;
+            render();
         }
     }
 }

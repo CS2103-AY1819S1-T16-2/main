@@ -33,9 +33,8 @@
 <li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">4.1. Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">4.2. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">4.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.4. Configuration</a></li>
+<li><a href="#logging">4.2. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.3. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a>
@@ -74,7 +73,9 @@
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
 <li><a href="#deleting-a-student">F.2. Deleting a student</a></li>
-<li><a href="#saving-data">F.3. Saving data</a></li>
+<li><a href="#creating-a-tutorial-group">F.3. Creating a Tutorial Group</a></li>
+<li><a href="#deleting-a-tutorial-group">F.4. Deleting a Tutorial Group</a></li>
+<li><a href="#grading-a-student">F.5. Grading a Student</a></li>
 </ul>
 </li>
 </ul>
@@ -614,16 +615,16 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>SuperTaClient
 <div class="ulist">
 <ul>
 <li>
-<p>stores all Unique Identifiers (UIDs) of <code>TutorialGroup</code>.</p>
+<p>stores all Unique Identifiers (UIDs) of <code>TutorialGroup</code> in a <code>Set&lt;String&gt;</code>.</p>
 </li>
 <li>
-<p>stores all <code>TutorialGroup</code> instances that are present in the SuperTA client.</p>
+<p>stores all <code>TutorialGroup</code> instances that are present in the SuperTA client in a <code>Map&lt;String, TutorialGroup</code>, which maps the ID of the <code>TutorialGroup</code> to the instance for fast lookup.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;TutorialGroup&gt;</code> that can be 'observed'.</p>
+<p>exposes an unmodifiable <code>ObservableList&lt;TutorialGroup&gt;</code> that can be 'observed', mirroring changes to the internal map.</p>
 </li>
 <li>
-<p>Removes any references to a <code>Student</code> instance that has been deleted in all <code>TutorialGroup</code> s.</p>
+<p>Can propogate removal of <code>Student</code> instances to all <code>TutorialGroup</code> s.</p>
 </li>
 <li>
 <p>does not depend on any other component to operate.</p>
@@ -637,13 +638,15 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>SuperTaClient
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>TutorialGroupMaster</code> handles generation of UIDs as well. If a <code>TutorialGroup</code> is inserted when some other <code>TutorialGroup</code> instance has the same ID, then <code>TutorialGroupMaster</code> will automatically generate a unique suffix and use that as the <code>id</code> of the inserted <code>TutorialGroup</code>.
+<div class="paragraph">
+<p>The <code>TutorialGroupMaster</code> handles generation of UIDs as well. If a <code>TutorialGroup</code> is inserted when some other <code>TutorialGroup</code> instance has the same ID, then <code>TutorialGroupMaster</code> will automatically generate a unique suffix and use that as the <code>id</code> of the inserted <code>TutorialGroup</code>. For example, the user tries to insert a <code>TutorialGroup</code> whose initial ID is <code>04a</code>, but there is an existing <code>TutorialGroup</code> with that same ID. The <code>TutorialGroupMaster</code> will then generate a suffix for this new <code>TutorialGroup</code>. The new ID will look something like <code>04a-dusty123</code>.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>TutorialGroupMaster</code> is able to handle lookup of <code>TutorialGroup</code> by ID quickly because it stores all <code>id</code> values in a <code>Set</code>. This notion of a master is necessary so we can handle operations such as removing all references to a deleted <code>Student</code>.</p>
+<p>The <code>TutorialGroupMaster</code> is able to handle lookup of <code>TutorialGroup</code> by ID quickly because it stores <code>TutorialGroup</code> instances in a <code>Map</code> which has the <code>TutorialGroup</code> IDs as key values. This notion of a master is necessary so we can handle operations such as propagating <code>Student</code> deletions to every single <code>TutorialGroup</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -663,10 +666,19 @@ The <code>TutorialGroupMaster</code> handles generation of UIDs as well. If a <c
 <div class="ulist">
 <ul>
 <li>
+<p>has a unique identifier.</p>
+</li>
+<li>
+<p>has a name.</p>
+</li>
+<li>
 <p>has a list of <code>Student</code> s that belong to it.</p>
 </li>
 <li>
 <p>has a list of <code>Assignment</code> s that belong to it.</p>
+</li>
+<li>
+<p>has a list of <code>Session</code> s that belong to it.</p>
 </li>
 <li>
 <p>should only contain <code>Student</code> s that are in the main client.</p>
@@ -680,10 +692,18 @@ The <code>TutorialGroupMaster</code> handles generation of UIDs as well. If a <c
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>TutorialGroup</code> model houses all other object instances that are crucial to the operation of the client. This is done because it makes logical sense - <code>Student</code> s and <code>Assignment</code> s should belong to a <code>TutorialGroup</code> .
+The <code>TutorialGroup</code> model houses all other object instances that are crucial to the operation of the client. This is done because it makes logical sense - <code>Student</code> s, <code>Assignment</code> s, and <code>Session</code> s should belong to a <code>TutorialGroup</code> .
 </td>
 </tr>
 </table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TutorialGroupObjectDiagram.png" alt="TutorialGroupObjectDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>This is an example of the use case of a <code>TutorialGroup</code>. In this object diagram, we have a <code>TutorialGroup</code> with the name <code>Studio04A</code> and the ID <code>04a</code>. It holds lists of <code>Student</code> s, <code>Assignment</code> s, and <code>Session</code> s in its appropriate lists. Each entity is not coupled with each other - it uses the <code>StudentId</code> to find out which <code>Student</code> is associated with it. For example, The <code>GradeEntry</code> object composes of a <code>StudentId</code> object, which will allow other components to find out which is the underlying <code>Student</code> model with this <code>StudentId</code>. This is done so that we don&#8217;t have to update each entity with updated copies of a <code>Student</code> when the user triggers an update event.</p>
 </div>
 </div>
 <div class="sect2">
@@ -903,20 +923,14 @@ If the <code>currentStatePointer</code> is at index <code>superTaClientStateList
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.2. [Proposed] Data Encryption</a></h3>
-<div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.3. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.2. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.3, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -947,7 +961,7 @@ If the <code>currentStatePointer</code> is at index <code>superTaClientStateList
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.3. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1832,7 +1846,7 @@ Expected: First contact is deleted from the list. Details of the deleted contact
 Expected: No student is deleted. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size)<br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -1840,29 +1854,135 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">F.3. Saving data</a></h3>
+<h3 id="creating-a-tutorial-group"><a class="link" href="#creating-a-tutorial-group">F.3. Creating a Tutorial Group</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Dealing with missing/corrupted data files</p>
+<p>Creating a tutorial group</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+<p>Prerequisites: List all tutorial groups using the <code>list-tutorial-groups</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>create-tutorial-group id/04a n/Test</code><br>
+Expected: A new tutorial group with the id <code>04a</code> and the name <code>Test</code> is created, and the list view is updated.</p>
+</li>
+<li>
+<p>Test case: Duplicate ID - <code>create-tutorial-group id/04a n/Test</code><br>
+In this test case, the <code>id</code> argument has to be an <code>id</code> that already exists in the memory. For example, you can run the above test case with the exact same arguments again.
+Expected: A new tutorial group with a different ID is created. The new ID has a random suffix appended to it. For example, if you run <code>create-tutorial-group id/04a n/Test</code> twice, the second tutorial group will have an ID that looks like <code>04a-stormy492</code>.</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-tutorial-group"><a class="link" href="#deleting-a-tutorial-group">F.4. Deleting a Tutorial Group</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a tutorial group</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Have a tutorial group with an ID of <code>04a</code> in the memory.</p>
+</li>
+<li>
+<p>Test case: <code>delete-tutorial-group id/04a</code><br>
+Expected: The tutorial group is deleted.</p>
+</li>
+<li>
+<p>Test case: Tutorial Group detailed view shows <code>[Deleted]</code> if user is currently viewing tutorial group details.<br>
+How to test:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Run <code>view-tutorial-group id/04a</code> first to see the detailed tutorial group view.</p>
+</li>
+<li>
+<p>Run <code>delete-tutorial-group id/04a</code><br>
+Expected: The UI shows <code>[Deleted]</code> next to the tutorial group name.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="grading-a-student"><a class="link" href="#grading-a-student">F.5. Grading a Student</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Creating an assignment</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Have one tutorial group with an ID of <code>04a</code>.</p>
+</li>
+<li>
+<p>Test case: <code>create-assignment tg/04a n/lab1 m/40.0</code>
+Expected: An assignment should be made. If you are on the detailed tutorial group screen, the UI should update accordingly.</p>
+</li>
+<li>
+<p>Test case: <code>create-assignment tg/05a n/lab1 m/40.0</code>
+Expected: An error message should be displayed, saying that there is no such tutorial group.</p>
+</li>
+<li>
+<p>Test case: <code>create-assignment tg/04a n/lab1 m/test</code>
+Expected: An error message should be displayed, saying that maximum marks should be a valid floating point number.</p>
+</li>
+<li>
+<p>Test case: <code>create-assignment tg/04a n/lab1 m/-1</code>
+Expected: An error message should be displayed, saying that the maximum marks should be more than 0.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Grading a student</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Have one tutorial group with an ID of <code>04a</code>, and an assignment that belongs to it with the name <code>lab1</code> with a maximum mark of <code>40.0</code>. Also, a student with a student ID of <code>A0166733Y</code> should be added to the tutorial group.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0166733Y as/lab1 m/35.0</code>
+Expected: The student gets graded <code>35.0</code> out of <code>40.0</code> marks. If you are in the detailed tutorial group or assignment screen, the UI should be updated accordingly.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0166733Y as/lab1 m/40.1</code>
+Expected: An error message should be shown in the status message, because <code>40.1</code> is greater than the maximum marks of <code>lab1</code>.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0166733Y as/lab1 m/-1</code>
+Expected: An error message will be shown, since negative marks are invalid.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/05a st/A0166733Y as/lab1 m/30</code>
+Expected: An error message showing that there is no such tutorial group should be shown.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0123456T as/lab1 m/30</code>
+Expected: An error message showing that there is no such student in this tutorial group should be shown. You can also try this when there is a student in the main directory with this ID, but this student is not added to the tutorial group.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0166733Y as/lab2 m/30</code>
+Expected: An error message showing that there is no such assignment should be shown.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 09:40:41 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-07 12:06:12 UTC</div></div></div></body></html>

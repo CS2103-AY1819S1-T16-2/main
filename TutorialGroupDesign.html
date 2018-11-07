@@ -17,16 +17,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p>stores all Unique Identifiers (UIDs) of <code>TutorialGroup</code>.</p>
+<p>stores all Unique Identifiers (UIDs) of <code>TutorialGroup</code> in a <code>Set&lt;String&gt;</code>.</p>
 </li>
 <li>
-<p>stores all <code>TutorialGroup</code> instances that are present in the SuperTA client.</p>
+<p>stores all <code>TutorialGroup</code> instances that are present in the SuperTA client in a <code>Map&lt;String, TutorialGroup</code>, which maps the ID of the <code>TutorialGroup</code> to the instance for fast lookup.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;TutorialGroup&gt;</code> that can be 'observed'.</p>
+<p>exposes an unmodifiable <code>ObservableList&lt;TutorialGroup&gt;</code> that can be 'observed', mirroring changes to the internal map.</p>
 </li>
 <li>
-<p>Removes any references to a <code>Student</code> instance that has been deleted in all <code>TutorialGroup</code> s.</p>
+<p>Can propogate removal of <code>Student</code> instances to all <code>TutorialGroup</code> s.</p>
 </li>
 <li>
 <p>does not depend on any other component to operate.</p>
@@ -40,13 +40,15 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>TutorialGroupMaster</code> handles generation of UIDs as well. If a <code>TutorialGroup</code> is inserted when some other <code>TutorialGroup</code> instance has the same ID, then <code>TutorialGroupMaster</code> will automatically generate a unique suffix and use that as the <code>id</code> of the inserted <code>TutorialGroup</code>.
+<div class="paragraph">
+<p>The <code>TutorialGroupMaster</code> handles generation of UIDs as well. If a <code>TutorialGroup</code> is inserted when some other <code>TutorialGroup</code> instance has the same ID, then <code>TutorialGroupMaster</code> will automatically generate a unique suffix and use that as the <code>id</code> of the inserted <code>TutorialGroup</code>. For example, the user tries to insert a <code>TutorialGroup</code> whose initial ID is <code>04a</code>, but there is an existing <code>TutorialGroup</code> with that same ID. The <code>TutorialGroupMaster</code> will then generate a suffix for this new <code>TutorialGroup</code>. The new ID will look something like <code>04a-dusty123</code>.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>TutorialGroupMaster</code> is able to handle lookup of <code>TutorialGroup</code> by ID quickly because it stores all <code>id</code> values in a <code>Set</code>. This notion of a master is necessary so we can handle operations such as removing all references to a deleted <code>Student</code>.</p>
+<p>The <code>TutorialGroupMaster</code> is able to handle lookup of <code>TutorialGroup</code> by ID quickly because it stores <code>TutorialGroup</code> instances in a <code>Map</code> which has the <code>TutorialGroup</code> IDs as key values. This notion of a master is necessary so we can handle operations such as propagating <code>Student</code> deletions to every single <code>TutorialGroup</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -66,10 +68,19 @@ The <code>TutorialGroupMaster</code> handles generation of UIDs as well. If a <c
 <div class="ulist">
 <ul>
 <li>
+<p>has a unique identifier.</p>
+</li>
+<li>
+<p>has a name.</p>
+</li>
+<li>
 <p>has a list of <code>Student</code> s that belong to it.</p>
 </li>
 <li>
 <p>has a list of <code>Assignment</code> s that belong to it.</p>
+</li>
+<li>
+<p>has a list of <code>Session</code> s that belong to it.</p>
 </li>
 <li>
 <p>should only contain <code>Student</code> s that are in the main client.</p>
@@ -83,9 +94,17 @@ The <code>TutorialGroupMaster</code> handles generation of UIDs as well. If a <c
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>TutorialGroup</code> model houses all other object instances that are crucial to the operation of the client. This is done because it makes logical sense - <code>Student</code> s and <code>Assignment</code> s should belong to a <code>TutorialGroup</code> .
+The <code>TutorialGroup</code> model houses all other object instances that are crucial to the operation of the client. This is done because it makes logical sense - <code>Student</code> s, <code>Assignment</code> s, and <code>Session</code> s should belong to a <code>TutorialGroup</code> .
 </td>
 </tr>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 09:40:41 UTC</div></div></div></body></html>
+<div class="imageblock">
+<div class="content">
+<img src="images/TutorialGroupObjectDiagram.png" alt="TutorialGroupObjectDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>This is an example of the use case of a <code>TutorialGroup</code>. In this object diagram, we have a <code>TutorialGroup</code> with the name <code>Studio04A</code> and the ID <code>04a</code>. It holds lists of <code>Student</code> s, <code>Assignment</code> s, and <code>Session</code> s in its appropriate lists. Each entity is not coupled with each other - it uses the <code>StudentId</code> to find out which <code>Student</code> is associated with it. For example, The <code>GradeEntry</code> object composes of a <code>StudentId</code> object, which will allow other components to find out which is the underlying <code>Student</code> model with this <code>StudentId</code>. This is done so that we don&#8217;t have to update each entity with updated copies of a <code>Student</code> when the user triggers an update event.</p>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-07 12:06:12 UTC</div></div></div></body></html>

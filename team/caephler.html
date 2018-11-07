@@ -1,0 +1,1386 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Gabriel - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">SuperTA</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S1-T16-2/main/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Gabriel - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-superta"><a class="link" href="#project-superta">PROJECT: SuperTA</a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>SuperTA is a desktop application to handle student records for Teaching Assistants and Professors in the School of Computing. The user interacts with it using a CLI, and it has a GUI created with JavaFX.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: added <strong>Tutorial Group and Assignment</strong> commands.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: The creation of commands to manipulate Tutorial Groups and Assignments, including the creation and viewing of these data structures.</p>
+</li>
+<li>
+<p>Justification: This feature is essential in achieiving core functionality. It allows teaching assistants to create Tutorial Groups and Assignments, which is key to keeping track of student performance.</p>
+</li>
+<li>
+<p>Highlights: This enhancement affects other commands interacting with these data structures.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major enhancement</strong>: improved <strong>User Interface (UI)</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: The user interface was very barebones at the start and was not visually appealing. The improvement to the UI makes for a better experience for the user on the whole. The UI was also further improved to display details of tutorial groups, assignments, attendance sessions, as well as students.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Added various view commands such as <code>view-session</code> and <code>list-tutorial-groups</code> which will trigger UI actions.</p>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [RepoSense collated code](<a href="https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&amp;search=caephler" class="bare">https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&amp;search=caephler</a>)</p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Team Lead</p>
+</li>
+<li>
+<p>Managed Project release from <code>v1.1</code> through <code>v1.4</code> on GitHub</p>
+</li>
+<li>
+<p>In charge of merging most Pull Requests on GitHub</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added initial commands for <code>TutorialGroup</code> and <code>Assignment</code>, such as <code>create-tutorial-group</code>, <code>create-assignment</code>, <code>grade</code>, and <code>view-tutorial-group</code> (Pull Request <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/19">#19</a>)</p>
+</li>
+<li>
+<p>Implemented <code>update-tutorial-group</code> command (Pull Request <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/62">#62</a>)</p>
+</li>
+<li>
+<p>Major UI Changes (Pull Requests <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/73">#73</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/92">#92</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/135">#135</a>)</p>
+</li>
+<li>
+<p>Improve Test Coverage (Pull Requests <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/41">#41</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/66">#66</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/101">#101</a>)</p>
+</li>
+<li>
+<p>Bug fixes (in various PRs)</p>
+</li>
+<li>
+<p>Added documentation for features implemented.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="listing-all-tutorial-groups-code-list-tutorial-groups-code"><a class="link" href="#listing-all-tutorial-groups-code-list-tutorial-groups-code">Listing all tutorial groups: <code>list-tutorial-groups</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all the tutorial groups, and reflects it on the UI.<br>
+Format: <code>list-tutorial-groups</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-student-code-edit-code"><a class="link" href="#editing-a-student-code-edit-code">Editing a student : <code>edit</code></a></h3>
+<div class="paragraph">
+<p>Edits an existing student in the directory.<br>
+Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [id/STUDENT_ID] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the student at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed student list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the student will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the student&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+<li>
+<p>You cannot change a student&#8217;s student ID to another existing student&#8217;s one.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
+Edits the phone number and email address of the 1st student to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+</li>
+<li>
+<p><code>edit 2 n/Betsy Crower t/</code><br>
+Edits the name of the 2nd student to be <code>Betsy Crower</code> and clears all existing tags.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-students-by-keywords-code-find-code"><a class="link" href="#locating-students-by-keywords-code-find-code">Locating students by keywords: <code>find</code></a></h3>
+<div class="paragraph">
+<p>Finds and lists all students in the SuperTA client whose information matched with the entered keywords.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>find [n/NAME] [p/PHONE] [e/EMAIL] [id/STUDENT_ID]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+</li>
+<li>
+<p>Only full words or numbers will be matched e.g. <code>Han</code> will not match <code>Hans</code>, <code>9123</code> will not match <code>91234567</code></p>
+</li>
+<li>
+<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>find n/John p/91234567</code> will return <code>John</code> and anybody with phone number <code>91234567</code></p>
+</li>
+<li>
+<p>If there are more than one exact same parameter in the command, only the latest parameter will be taken.  E.g. <code>find n/John n/Alice</code> will only return search result of <code>Alice</code>, not <code>John</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find n/John</code><br>
+Returns <code>john</code> and <code>John Doe</code></p>
+</li>
+<li>
+<p><code>find p/91234567</code><br>
+Returns student with phone number <code>91234567</code></p>
+</li>
+<li>
+<p><code>find n/John id/A0123456T</code><br>
+Returns <code>john</code> and <code>John Doe</code> and student with student id <code>A0123456T</code></p>
+</li>
+<li>
+<p><code>find n/Alice n/Hans</code><br>
+Returns <code>Hans</code> only</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-student-code-delete-code"><a class="link" href="#deleting-a-student-code-delete-code">Deleting a student : <code>delete</code></a></h3>
+<div class="paragraph">
+<p>Deletes the specified student from the directory.<br>
+Format: <code>delete INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the student at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed student list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd student in the directory.</p>
+</li>
+<li>
+<p><code>find Betsy</code><br>
+<code>delete 1</code><br>
+Deletes the 1st student in the results of the <code>find</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-a-student-code-select-code"><a class="link" href="#selecting-a-student-code-select-code">Selecting a student : <code>select</code></a></h3>
+<div class="paragraph">
+<p>Selects the student identified by the index number used in the displayed student list.<br>
+Format: <code>select INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Selects the student and loads the Google search page the student at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed student list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>select 2</code><br>
+Selects the 2nd student in the list.</p>
+</li>
+<li>
+<p><code>find Betsy</code><br>
+<code>select 1</code><br>
+Selects the 1st student in the results of the <code>find</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-a-student-s-information-code-view-code"><a class="link" href="#viewing-a-student-s-information-code-view-code">Viewing a student&#8217;s information: <code>view</code></a></h3>
+<div class="paragraph">
+<p>Views a student&#8217;s information and any feedback that is left for him.<br>
+Format: <code>view id/STUDENT_ID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view id/A0166733Y</code><br>
+Views the information of the student with the ID A0166733Y.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-a-tutorial-group-code-create-tutorial-group-code"><a class="link" href="#creating-a-tutorial-group-code-create-tutorial-group-code">Creating a Tutorial Group: <code>create-tutorial-group</code></a></h3>
+<div class="paragraph">
+<p>Creates a tutorial group with specified name and ID.<br>
+The ID will be used in future commands to reference to this tutorial group.<br>
+Format: <code>create-tutorial-group n/NAME id/TUTORIAL_GROUP_ID</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If there is already a tutorial group with the same identifier, the identifier will have a random suffix appended to it.<br></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>create-tutorial-group n/CS1101S Studio 04A id/04a</code><br>
+Creates a tutorial group named <code>CS1101S Studio 04A</code> with the identifier <code>04a</code>.<br></p>
+</li>
+<li>
+<p><code>create-tutorial-group n/CS2103T id/04b</code><br>
+<code>create-tutorial-group n/CS2103T id/04b</code><br>
+Creates a tutorial group named CS2103T with the identifier 04b and a second tutorial group with the same name and identifier <code>04b-dusty123</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="updating-a-tutorial-group-code-update-tutorial-group-code"><a class="link" href="#updating-a-tutorial-group-code-update-tutorial-group-code">Updating a Tutorial Group: <code>update-tutorial-group</code></a></h3>
+<div class="paragraph">
+<p>Updates a tutorial group&#8217;s details.<br>
+Format: <code>update-tutorial-group id/TUTORIAL_GROUP_ID n/NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>update-tutorial-group id/04a n/CS2103T Tutorial Group 9</code><br>
+Updates the tutorial group with the ID <code>04a</code> to have an updated name of <code>CS2103T Tutorial Group 9</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-tutorial-group-code-delete-tutorial-group-code"><a class="link" href="#deleting-a-tutorial-group-code-delete-tutorial-group-code">Deleting a Tutorial Group: <code>delete-tutorial-group</code></a></h3>
+<div class="paragraph">
+<p>Deletes an existing tutorial group.<br>
+Format: <code>delete-tutorial-group id/TUTORIAL_GROUP_ID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete-tutorial-group id/04a</code><br>
+Deletes a tutorial group with the ID <code>04a</code>.
+=== View Tutorial Group: <code>view-tutorial-group</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Views a tutorial group&#8217;s details.<br>
+Format: <code>view-tutorial-group id/TUTORIAL_GROUP_ID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view-tutorial-group id/04a</code><br>
+Displays the <code>04a</code> tutorial group&#8217;s information .
+=== Add to Tutorial Group: <code>add-to-tutorial-group</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Adds a student to a tutorial group. Note that this command only takes in 1 student at a time.<br>
+Format: <code>add-to-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add-to-tutorial-group tg/04a st/A1231231Y</code><br>
+Adds the student with student ID <code>A1231231Y</code> to the tutorial group with an ID of <code>04a</code>.
+=== Remove from Tutorial Group: <code>remove-from-tutorial-group</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Removes a student from a tutorial group.<br>
+Format: <code>remove-from-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>remove-from-tutorial-group tg/1 st/A1231231Y</code><br>
+Removes the student with student ID <code>A1231231Y</code> from the tutorial group with an ID of <code>1</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-attendance-code-create-attendance-code"><a class="link" href="#create-attendance-code-create-attendance-code">Create Attendance: <code>create-attendance</code></a></h3>
+<div class="paragraph">
+<p>Creates an attendance listing for a specific tutorial group, identified by its ID.<br>
+Format: <code>create-attendance tg/TUTORIAL_GROUP_ID n/NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>create-attendance tg/1 n/W4 Tutorial</code><br>
+Creates an attendance named <code>W4 Tutorial</code> for the tutorial group with an ID of <code>1</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mark-attendance-code-mark-attendance-code"><a class="link" href="#mark-attendance-code-mark-attendance-code">Mark Attendance: <code>mark-attendance</code></a></h3>
+<div class="paragraph">
+<p>Marks attendance for students from a specific tutorial group and session name, identified by its ID and name. Marking a student&#8217;s attendance a second time will not change the student&#8217;s attendance.<br>
+Format: <code>mark-attendance tg/TUTORIAL_GROUP_ID n/NAME st/STUDENT_ID &#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>mark-attendance tg/1 n/W4 Tutorial st/A1234567T st/A0123456Y</code>
+Marks students with IDs <code>A1234567T</code> and <code>A0123456Y</code> as present in tutorial session named <code>W4 Tutorial</code> for the tutorial group with an ID of <code>1</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-attendance-session-code-view-session-code"><a class="link" href="#view-attendance-session-code-view-session-code">View Attendance Session: <code>view-session</code></a></h3>
+<div class="paragraph">
+<p>Views the session details for a particular session in a tutorial group.<br>
+Format: <code>view-attendance tg/TUTORIAL_GROUP_ID n/SESSION_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view-attendance tg/04a n/W1Tutorial</code>
+Views the details of the session <code>W1Tutorial</code> belonging to the tutorial group <code>04a</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-an-assignment-code-create-assignment-code"><a class="link" href="#creating-an-assignment-code-create-assignment-code">Creating an Assignment: <code>create-assignment</code></a></h3>
+<div class="paragraph">
+<p>Creates an assignment for a specific tutorial group.<br>
+The <code>MAX_MARKS</code> argument takes in any valid floating point number.<br>
+Format: <code>create-assignment tg/TUTORIAL_GROUP_ID n/ASSIGNMENT_NAME m/MAX_MARKS</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>In future commands, assignments are referenced to by its name.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>create-assignment tg/04a n/lab1 m/40</code><br>
+Creates an assignment named <code>lab1</code> for the tutorial group with an ID of <code>04a</code>, with the maximum marks for this assignment as <code>40</code>.
+=== Deleting an Assignment: <code>delete-assignment</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Deletes an existing assignment for a specific tutorial group.<br>
+Format: <code>delete-assignment as/ASSIGNMENT_NAME tg/TUTORIAL_GROUP_ID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete-assignment as/lab1 tg/04a</code><br>
+Deletes an assignment named 'lab1' from the tutorial group with an ID of '04a'.
+=== Grade Assignment for Student: <code>grade</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Enters a grade for a student for a specific assignment in a tutorial group.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>grade tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME st/STUDENT_ID m/MARKS</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The marks given should be between 0 and the maximum marks of the assignment.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>grade tg/04a as/lab1 st/A0166733Y m/40</code><br>
+Creates a grade with marks <code>40</code> for the student with an ID of <code>A0166733Y</code> in the tutorial group <code>04a</code> for the assignment with ID <code>lab1</code>.
+=== View Assignment Details: <code>view-assignment</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Views an assignment details.<br>
+Format: <code>view-assignment tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view-assignment tg/04a as/lab1</code><br>
+Views the assignment details for the <code>lab1</code> assignment in the <code>04a</code> tutorial group.
+=== Feedback to Student: <code>feedback</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Adds feedback to a student with a specified Student ID.<br>
+Format: <code>feedback id/STUDENT_ID f/FEEDBACK</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>feedback id/A1234566T f/Is generally attentive during class. However, needs to speak up more.</code><br>
+Adds the given feedback <code>Is generally attentive during class. However, needs to speak up more.</code> to the student with Student ID <code>A1234566T</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">Listing entered commands : <code>history</code></a></h3>
+<div class="paragraph">
+<p>Lists all the commands that you have entered in reverse chronological order.<br>
+Format: <code>history</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">Undoing previous command : <code>undo</code></a></h3>
+<div class="paragraph">
+<p>Restores the client to the state before the previous <em>undoable</em> command was executed.<br>
+Format: <code>undo</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Undoable commands: those commands that modify the client&#8217;s content.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>list</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>select 1</code><br>
+<code>list</code><br>
+<code>undo</code><br>
+The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+=== Redoing the previously undone command : <code>redo</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Reverses the most recent <code>undo</code> command.<br>
+Format: <code>redo</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>redo</code><br>
+The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">Clearing all entries : <code>clear</code></a></h3>
+<div class="paragraph">
+<p>Clears all data from the client. This includes all students, tutorial groups, assignments, etc.<br>
+Format: <code>clear</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">Exiting the program : <code>exit</code></a></h3>
+<div class="paragraph">
+<p>Exits the program.<br>
+Format: <code>exit</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filter-by-tutorial-group-code-filter-code"><a class="link" href="#filter-by-tutorial-group-code-filter-code">Filter by Tutorial Group: <code>filter</code></a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Coming in 2.0</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Filters students by a specific tutorial group ID.<br>
+Format: <code>filter tg/TUTORIAL_GROUP_ID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>filter tg/1</code><br>
+Shows a list of all the students in the tutorial group with an ID of <code>1</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort-by-assignment-grade-code-sort-code"><a class="link" href="#sort-by-assignment-grade-code-sort-code">Sort by assignment grade: <code>sort</code></a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Coming in v2.0</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Sorts students in order of their grade for a particular assignment.
+Format: <code>sort tg/TUTORIAL_GROUP_ID a/ASSIGNMENT_ID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sort tg/1 a/1</code>
+Displays a list of students in tutorial group <code>1</code> by their grade on assignment <code>1</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-detailed-performance-data-of-student-code-view-performance-code"><a class="link" href="#view-detailed-performance-data-of-student-code-view-performance-code">View detailed performance data of student: <code>view-performance</code></a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Coming in v2.0</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Displays detailed information about a student across all tutorial groups, including his performance over time.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">Saving the data</a></h3>
+<div class="paragraph">
+<p>The SuperTA clients' data are saved in the hard disk automatically after any command that changes the data.<br>
+There is no need to save manually.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Help</strong> : <code>help</code></p>
+</li>
+<li>
+<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL id/STUDENT_ID [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com id/A0123456Y t/needs-help t/on-loa</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code></p>
+</li>
+<li>
+<p><strong>List Tutorial Groups</strong> : <code>list-tutorial-groups</code></p>
+</li>
+<li>
+<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [id/STUDENT_ID] [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
+</li>
+<li>
+<p><strong>Find</strong> : <code>find [type/KEYWORD] [type/MORE_KEYWORDS]</code><br>
+e.g. <code>find n/John</code>, <code>find id/A0166733Y n/John</code></p>
+</li>
+<li>
+<p><strong>Delete</strong> : <code>delete INDEX</code><br>
+e.g. <code>delete 3</code></p>
+</li>
+<li>
+<p><strong>Select</strong> : <code>select INDEX</code><br>
+e.g.<code>select 2</code></p>
+</li>
+<li>
+<p><strong>View Feedback</strong>: <code>view id/STUDENT_ID</code><br>
+e.g. <code>view id/A0166733Y</code></p>
+</li>
+<li>
+<p><strong>Create Tutorial Group</strong>: <code>create-tutorial-group n/NAME id/TUTORIAL_GROUP_ID</code><br>
+e.g. <code>create-tutorial-group n/CS1101S Studio 04A id/04a</code></p>
+</li>
+<li>
+<p><strong>Update Tutorial Group</strong>: <code>update-tutorial-group id/TUTORIAL_GROUP_ID n/NAME</code><br>
+e.g. <code>update-tutorial-group id/04a n/CS2103T Group 04A</code></p>
+</li>
+<li>
+<p><strong>Delete Tutorial Group</strong>: <code>delete-tutorial-group id/TUTORIAL_GROUP_ID</code><br>
+e.g. <code>delete-tutorial-group id/04a</code></p>
+</li>
+<li>
+<p><strong>Add Student to Tutorial Group</strong>: <code>add-to-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code><br>
+e.g. <code>add-to-tutorial-group tg/04a st/A0166733Y</code></p>
+</li>
+<li>
+<p><strong>Remove Student from Tutorial Group</strong>: <code>remove-from-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code><br>
+e.g. <code>remove-from-tutorial-group tg/04a st/A0166733Y</code></p>
+</li>
+<li>
+<p><strong>Create Attendance</strong>: <code>create-attendance tg/TUTORIAL_GROUP_ID n/NAME</code><br>
+e.g. <code>create-attendance tg/1 n/W4 Tutorial</code></p>
+</li>
+<li>
+<p><strong>Mark Attendance</strong>: <code>mark-attendance tg/TUTORIAL_GROUP_ID n/NAME st/STUDENT_ID &#8230;&#8203;</code><br>
+e.g. <code>mark-attendance tg/1 n/W4 Tutorial st/A1234567T st/A0123456Y</code></p>
+</li>
+<li>
+<p><strong>View Attendance</strong>: <code>view-session tg/TUTORIAL_GRUOP_ID n/SESSION_NAME</code><br>
+e.g. <code>view-session tg/1 n/W4 Tutorial</code></p>
+</li>
+<li>
+<p><strong>Create Assignment</strong>: <code>create-assignment tg/TUTORIAL_GROUP_ID n/ASSIGNMENT_NAME m/MAX_MARKS</code><br>
+e.g. <code>create-assignment tg/04a n/lab1 m/40</code></p>
+</li>
+<li>
+<p><strong>Delete Assignment</strong>: <code>delete-assignment as/ASSIGNMENT_TITLE tg/TUTORIAL_GROUP_ID</code><br>
+e.g. <code>delete-assignment as/lab1 tg/04a</code></p>
+</li>
+<li>
+<p><strong>Grade Assignment</strong>: <code>grade tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME st/STUDENT_ID m/MARKS</code><br>
+e.g. <code>grade tg/04a as/lab1 st/A0166733Y m/30</code></p>
+</li>
+<li>
+<p><strong>View Assignment Details</strong>: <code>view-assignment tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME</code><br>
+e.g. <code>view-assignment tg/04a as/lab1</code></p>
+</li>
+<li>
+<p><strong>Feedback</strong>: <code>feedback id/STUDENT_ID f/FEEDBACK</code><br>
+e.g. <code>feedback id/A0166733Y f/Likes to sleep in class</code></p>
+</li>
+<li>
+<p><strong>History</strong> : <code>history</code></p>
+</li>
+<li>
+<p><strong>Undo</strong> : <code>undo</code></p>
+</li>
+<li>
+<p><strong>Redo</strong> : <code>redo</code></p>
+</li>
+<li>
+<p><strong>Clear</strong> : <code>clear</code></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="creating-a-tutorial-group-code-create-tutorial-group-code-2"><a class="link" href="#creating-a-tutorial-group-code-create-tutorial-group-code-2">Creating a Tutorial Group: <code>create-tutorial-group</code></a></h3>
+<div class="paragraph">
+<p>Creates a tutorial group with specified name and ID.<br>
+The ID will be used in future commands to reference to this tutorial group.<br>
+Format: <code>create-tutorial-group n/NAME id/TUTORIAL_GROUP_ID</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If there is already a tutorial group with the same identifier, the identifier will have a random suffix appended to it.<br></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>create-tutorial-group n/CS1101S Studio 04A id/04a</code><br>
+Creates a tutorial group named <code>CS1101S Studio 04A</code> with the identifier <code>04a</code>.<br></p>
+</li>
+<li>
+<p><code>create-tutorial-group n/CS2103T id/04b</code><br>
+<code>create-tutorial-group n/CS2103T id/04b</code><br>
+Creates a tutorial group named CS2103T with the identifier 04b and a second tutorial group with the same name and identifier <code>04b-dusty123</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="updating-a-tutorial-group-code-update-tutorial-group-code-2"><a class="link" href="#updating-a-tutorial-group-code-update-tutorial-group-code-2">Updating a Tutorial Group: <code>update-tutorial-group</code></a></h3>
+<div class="paragraph">
+<p>Updates a tutorial group&#8217;s details.<br>
+Format: <code>update-tutorial-group id/TUTORIAL_GROUP_ID n/NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>update-tutorial-group id/04a n/CS2103T Tutorial Group 9</code><br>
+Updates the tutorial group with the ID <code>04a</code> to have an updated name of <code>CS2103T Tutorial Group 9</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-tutorial-group-code-delete-tutorial-group-code-2"><a class="link" href="#deleting-a-tutorial-group-code-delete-tutorial-group-code-2">Deleting a Tutorial Group: <code>delete-tutorial-group</code></a></h3>
+<div class="paragraph">
+<p>Deletes an existing tutorial group.<br>
+Format: <code>delete-tutorial-group id/TUTORIAL_GROUP_ID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete-tutorial-group id/04a</code><br>
+Deletes a tutorial group with the ID <code>04a</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-tutorial-group-code-view-tutorial-group-code"><a class="link" href="#view-tutorial-group-code-view-tutorial-group-code">View Tutorial Group: <code>view-tutorial-group</code></a></h3>
+<div class="paragraph">
+<p>Views a tutorial group&#8217;s details.<br>
+Format: <code>view-tutorial-group id/TUTORIAL_GROUP_ID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view-tutorial-group id/04a</code><br>
+Displays the <code>04a</code> tutorial group&#8217;s information .</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-to-tutorial-group-code-add-to-tutorial-group-code"><a class="link" href="#add-to-tutorial-group-code-add-to-tutorial-group-code">Add to Tutorial Group: <code>add-to-tutorial-group</code></a></h3>
+<div class="paragraph">
+<p>Adds a student to a tutorial group. Note that this command only takes in 1 student at a time.<br>
+Format: <code>add-to-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add-to-tutorial-group tg/04a st/A1231231Y</code><br>
+Adds the student with student ID <code>A1231231Y</code> to the tutorial group with an ID of <code>04a</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-an-assignment-code-create-assignment-code-2"><a class="link" href="#creating-an-assignment-code-create-assignment-code-2">Creating an Assignment: <code>create-assignment</code></a></h3>
+<div class="paragraph">
+<p>Creates an assignment for a specific tutorial group.<br>
+The <code>MAX_MARKS</code> argument takes in any valid floating point number.<br>
+Format: <code>create-assignment tg/TUTORIAL_GROUP_ID n/ASSIGNMENT_NAME m/MAX_MARKS</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>In future commands, assignments are referenced to by its name.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>create-assignment tg/04a n/lab1 m/40</code><br>
+Creates an assignment named <code>lab1</code> for the tutorial group with an ID of <code>04a</code>, with the maximum marks for this assignment as <code>40</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="grade-assignment-for-student-code-grade-code"><a class="link" href="#grade-assignment-for-student-code-grade-code">Grade Assignment for Student: <code>grade</code></a></h3>
+<div class="paragraph">
+<p>Enters a grade for a student for a specific assignment in a tutorial group.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>grade tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME st/STUDENT_ID m/MARKS</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The marks given should be between 0 and the maximum marks of the assignment.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>grade tg/04a as/lab1 st/A0166733Y m/40</code><br>
+Creates a grade with marks <code>40</code> for the student with an ID of <code>A0166733Y</code> in the tutorial group <code>04a</code> for the assignment with ID <code>lab1</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-assignment-details-code-view-assignment-code"><a class="link" href="#view-assignment-details-code-view-assignment-code">View Assignment Details: <code>view-assignment</code></a></h3>
+<div class="paragraph">
+<p>Views an assignment details.<br>
+Format: <code>view-assignment tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view-assignment tg/04a as/lab1</code><br>
+Views the assignment details for the <code>lab1</code> assignment in the <code>04a</code> tutorial group.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-attendance-session-code-view-session-code-2"><a class="link" href="#view-attendance-session-code-view-session-code-2">View Attendance Session: <code>view-session</code></a></h3>
+<div class="paragraph">
+<p>Views the session details for a particular session in a tutorial group.<br>
+Format: <code>view-attendance tg/TUTORIAL_GROUP_ID n/SESSION_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view-attendance tg/04a n/W1Tutorial</code>
+Views the details of the session <code>W1Tutorial</code> belonging to the tutorial group <code>04a</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="Design-TutorialGroupMaster"><a class="link" href="#Design-TutorialGroupMaster">TutorialGroupMaster Design</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/TutorialGroupMasterDiagram.png" alt="TutorialGroupMasterDiagram" width="800">
+</div>
+<div class="title">Figure 1. Structure of the TutorialGroupMaster</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/superta/model/tutorialgroup/TutorialGroupMaster.java"><code>TutorialGroupMaster.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>TutorialGroupMaster</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores all Unique Identifiers (UIDs) of <code>TutorialGroup</code> in a <code>Set&lt;String&gt;</code>.</p>
+</li>
+<li>
+<p>stores all <code>TutorialGroup</code> instances that are present in the SuperTA client in a <code>Map&lt;String, TutorialGroup</code>, which maps the ID of the <code>TutorialGroup</code> to the instance for fast lookup.</p>
+</li>
+<li>
+<p>exposes an unmodifiable <code>ObservableList&lt;TutorialGroup&gt;</code> that can be 'observed', mirroring changes to the internal map.</p>
+</li>
+<li>
+<p>Can propogate removal of <code>Student</code> instances to all <code>TutorialGroup</code> s.</p>
+</li>
+<li>
+<p>does not depend on any other component to operate.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>TutorialGroupMaster</code> handles generation of UIDs as well. If a <code>TutorialGroup</code> is inserted when some other <code>TutorialGroup</code> instance has the same ID, then <code>TutorialGroupMaster</code> will automatically generate a unique suffix and use that as the <code>id</code> of the inserted <code>TutorialGroup</code>. For example, the user tries to insert a <code>TutorialGroup</code> whose initial ID is <code>04a</code>, but there is an existing <code>TutorialGroup</code> with that same ID. The <code>TutorialGroupMaster</code> will then generate a suffix for this new <code>TutorialGroup</code>. The new ID will look something like <code>04a-dusty123</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <code>TutorialGroupMaster</code> is able to handle lookup of <code>TutorialGroup</code> by ID quickly because it stores <code>TutorialGroup</code> instances in a <code>Map</code> which has the <code>TutorialGroup</code> IDs as key values. This notion of a master is necessary so we can handle operations such as propagating <code>Student</code> deletions to every single <code>TutorialGroup</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-TutorialGroup"><a class="link" href="#Design-TutorialGroup">TutorialGroup Model</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/TutorialGroupDiagram.png" alt="TutorialGroupDiagram" width="800">
+</div>
+<div class="title">Figure 2. Structure of the Storage Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/superta/tutorialgroup/TutorialGroup.java"><code>TutorialGroup.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>TutorialGroup</code> model,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>has a unique identifier.</p>
+</li>
+<li>
+<p>has a name.</p>
+</li>
+<li>
+<p>has a list of <code>Student</code> s that belong to it.</p>
+</li>
+<li>
+<p>has a list of <code>Assignment</code> s that belong to it.</p>
+</li>
+<li>
+<p>has a list of <code>Session</code> s that belong to it.</p>
+</li>
+<li>
+<p>should only contain <code>Student</code> s that are in the main client.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>TutorialGroup</code> model houses all other object instances that are crucial to the operation of the client. This is done because it makes logical sense - <code>Student</code> s, <code>Assignment</code> s, and <code>Session</code> s should belong to a <code>TutorialGroup</code> .
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TutorialGroupObjectDiagram.png" alt="TutorialGroupObjectDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>This is an example of the use case of a <code>TutorialGroup</code>. In this object diagram, we have a <code>TutorialGroup</code> with the name <code>Studio04A</code> and the ID <code>04a</code>. It holds lists of <code>Student</code> s, <code>Assignment</code> s, and <code>Session</code> s in its appropriate lists. Each entity is not coupled with each other - it uses the <code>StudentId</code> to find out which <code>Student</code> is associated with it. For example, The <code>GradeEntry</code> object composes of a <code>StudentId</code> object, which will allow other components to find out which is the underlying <code>Student</code> model with this <code>StudentId</code>. This is done so that we don&#8217;t have to update each entity with updated copies of a <code>Student</code> when the user triggers an update event.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="manual-testing"><a class="link" href="#manual-testing">Manual Testing</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="creating-a-tutorial-group"><a class="link" href="#creating-a-tutorial-group">Creating a Tutorial Group</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Creating a tutorial group</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all tutorial groups using the <code>list-tutorial-groups</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>create-tutorial-group id/04a n/Test</code><br>
+Expected: A new tutorial group with the id <code>04a</code> and the name <code>Test</code> is created, and the list view is updated.</p>
+</li>
+<li>
+<p>Test case: Duplicate ID - <code>create-tutorial-group id/04a n/Test</code><br>
+In this test case, the <code>id</code> argument has to be an <code>id</code> that already exists in the memory. For example, you can run the above test case with the exact same arguments again.
+Expected: A new tutorial group with a different ID is created. The new ID has a random suffix appended to it. For example, if you run <code>create-tutorial-group id/04a n/Test</code> twice, the second tutorial group will have an ID that looks like <code>04a-stormy492</code>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-tutorial-group"><a class="link" href="#deleting-a-tutorial-group">Deleting a Tutorial Group</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a tutorial group</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Have a tutorial group with an ID of <code>04a</code> in the memory.</p>
+</li>
+<li>
+<p>Test case: <code>delete-tutorial-group id/04a</code><br>
+Expected: The tutorial group is deleted.</p>
+</li>
+<li>
+<p>Test case: Tutorial Group detailed view shows <code>[Deleted]</code> if user is currently viewing tutorial group details.<br>
+How to test:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Run <code>view-tutorial-group id/04a</code> first to see the detailed tutorial group view.</p>
+</li>
+<li>
+<p>Run <code>delete-tutorial-group id/04a</code><br>
+Expected: The UI shows <code>[Deleted]</code> next to the tutorial group name.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="grading-a-student"><a class="link" href="#grading-a-student">Grading a Student</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Creating an assignment</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Have one tutorial group with an ID of <code>04a</code>.</p>
+</li>
+<li>
+<p>Test case: <code>create-assignment tg/04a n/lab1 m/40.0</code>
+Expected: An assignment should be made. If you are on the detailed tutorial group screen, the UI should update accordingly.</p>
+</li>
+<li>
+<p>Test case: <code>create-assignment tg/05a n/lab1 m/40.0</code>
+Expected: An error message should be displayed, saying that there is no such tutorial group.</p>
+</li>
+<li>
+<p>Test case: <code>create-assignment tg/04a n/lab1 m/test</code>
+Expected: An error message should be displayed, saying that maximum marks should be a valid floating point number.</p>
+</li>
+<li>
+<p>Test case: <code>create-assignment tg/04a n/lab1 m/-1</code>
+Expected: An error message should be displayed, saying that the maximum marks should be more than 0.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Grading a student</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Have one tutorial group with an ID of <code>04a</code>, and an assignment that belongs to it with the name <code>lab1</code> with a maximum mark of <code>40.0</code>. Also, a student with a student ID of <code>A0166733Y</code> should be added to the tutorial group.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0166733Y as/lab1 m/35.0</code>
+Expected: The student gets graded <code>35.0</code> out of <code>40.0</code> marks. If you are in the detailed tutorial group or assignment screen, the UI should be updated accordingly.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0166733Y as/lab1 m/40.1</code>
+Expected: An error message should be shown in the status message, because <code>40.1</code> is greater than the maximum marks of <code>lab1</code>.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0166733Y as/lab1 m/-1</code>
+Expected: An error message will be shown, since negative marks are invalid.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/05a st/A0166733Y as/lab1 m/30</code>
+Expected: An error message showing that there is no such tutorial group should be shown.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0123456T as/lab1 m/30</code>
+Expected: An error message showing that there is no such student in this tutorial group should be shown. You can also try this when there is a student in the main directory with this ID, but this student is not added to the tutorial group.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0166733Y as/lab2 m/30</code>
+Expected: An error message showing that there is no such assignment should be shown.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-07 12:06:12 UTC</div></div></div></body></html>

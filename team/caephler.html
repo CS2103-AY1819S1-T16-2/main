@@ -210,6 +210,10 @@ Returns <code>john</code> and <code>John Doe</code></p>
 Returns student with phone number <code>91234567</code></p>
 </li>
 <li>
+<p><code>find e/Johndoe@hotmail.com</code><br>
+Returns student with email <code>Johndoe@hotmail.com</code></p>
+</li>
+<li>
 <p><code>find n/John id/A0123456T</code><br>
 Returns <code>john</code> and <code>John Doe</code> and student with student id <code>A0123456T</code></p>
 </li>
@@ -386,11 +390,13 @@ Format: <code>delete-tutorial-group id/TUTORIAL_GROUP_ID</code></p>
 <ul>
 <li>
 <p><code>delete-tutorial-group id/04a</code><br>
-Deletes a tutorial group with the ID <code>04a</code>.
-=== View Tutorial Group: <code>view-tutorial-group</code></p>
+Deletes a tutorial group with the ID <code>04a</code>.</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="view-tutorial-group-code-view-tutorial-group-code"><a class="link" href="#view-tutorial-group-code-view-tutorial-group-code">View Tutorial Group: <code>view-tutorial-group</code></a></h3>
 <div class="paragraph">
 <p>Views a tutorial group&#8217;s details.<br>
 Format: <code>view-tutorial-group id/TUTORIAL_GROUP_ID</code></p>
@@ -402,11 +408,13 @@ Format: <code>view-tutorial-group id/TUTORIAL_GROUP_ID</code></p>
 <ul>
 <li>
 <p><code>view-tutorial-group id/04a</code><br>
-Displays the <code>04a</code> tutorial group&#8217;s information .
-=== Add to Tutorial Group: <code>add-to-tutorial-group</code></p>
+Displays the <code>04a</code> tutorial group&#8217;s information .</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="add-to-tutorial-group-code-add-to-tutorial-group-code"><a class="link" href="#add-to-tutorial-group-code-add-to-tutorial-group-code">Add to Tutorial Group: <code>add-to-tutorial-group</code></a></h3>
 <div class="paragraph">
 <p>Adds a student to a tutorial group. Note that this command only takes in 1 student at a time.<br>
 Format: <code>add-to-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code></p>
@@ -518,11 +526,59 @@ Format: <code>create-assignment tg/TUTORIAL_GROUP_ID n/ASSIGNMENT_NAME m/MAX_MAR
 <ul>
 <li>
 <p><code>create-assignment tg/04a n/lab1 m/40</code><br>
-Creates an assignment named <code>lab1</code> for the tutorial group with an ID of <code>04a</code>, with the maximum marks for this assignment as <code>40</code>.
-=== Deleting an Assignment: <code>delete-assignment</code></p>
+Creates an assignment named <code>lab1</code> for the tutorial group with an ID of <code>04a</code>, with the maximum marks for this assignment as <code>40</code>.</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="update-an-assignment-code-update-assignment-code"><a class="link" href="#update-an-assignment-code-update-assignment-code">Update an Assignment: <code>update-assignment</code></a></h3>
+<div class="paragraph">
+<p>Updates an existing assignment details.<br></p>
+</div>
+<div class="paragraph">
+<p>Assignment details such as assignment title and maximum marks can be changed with this command.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>update-assignment tg/TUTORIAL-GROUP-ID as/OLD-ASSIGNMENT-TITLE m/OLD-ASSIGNMENT-MAX-MARKS
+         [new_as/NEW-ASSIGNMENT-TITLE] [new_m/NEW-ASSIGNMENT-MAX-MARKS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>This command does not adjust the student grades in the assignment. Therefore, do note that it is possible for existing student grades to be higher than the updated maximum marks.</p>
+</li>
+<li>
+<p>This command will not work if the updated assignment title has already existed in the assignment list.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>update-assignment tg/04a as/lab1 m/40.0 new_as/lab2</code><br>
+Updates an assignment named <code>lab1</code> to <code>lab2</code> for the tutorial group with an ID of <code>04a</code>.</p>
+</li>
+<li>
+<p><code>update-assignment tg/04a as/lab1 m/40.0 new_m/50</code><br>
+Updates <code>lab1</code> assignment maximum marks from <code>40.0</code> to <code>50.0</code> marks for the tutorial group with an ID of <code>04a</code>.</p>
+</li>
+<li>
+<p><code>update-assignment tg/04a as/lab1 m/40.0 new_as/lab2 new_m/50</code><br>
+Updates an assignment named <code>lab1</code> and maximum marks of <code>40.0</code>, to assignment named <code>lab2</code> and maximum marks of <code>50.0</code> for the tutorial group with an ID of <code>04a</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-an-assignment-code-delete-assignment-code"><a class="link" href="#deleting-an-assignment-code-delete-assignment-code">Deleting an Assignment: <code>delete-assignment</code></a></h3>
 <div class="paragraph">
 <p>Deletes an existing assignment for a specific tutorial group.<br>
 Format: <code>delete-assignment as/ASSIGNMENT_NAME tg/TUTORIAL_GROUP_ID</code></p>
@@ -579,11 +635,13 @@ Format: <code>view-assignment tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME</code></p>
 <ul>
 <li>
 <p><code>view-assignment tg/04a as/lab1</code><br>
-Views the assignment details for the <code>lab1</code> assignment in the <code>04a</code> tutorial group.
-=== Feedback to Student: <code>feedback</code></p>
+Views the assignment details for the <code>lab1</code> assignment in the <code>04a</code> tutorial group.</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="feedback-to-student-code-feedback-code"><a class="link" href="#feedback-to-student-code-feedback-code">Feedback to Student: <code>feedback</code></a></h3>
 <div class="paragraph">
 <p>Adds feedback to a student with a specified Student ID.<br>
 Format: <code>feedback id/STUDENT_ID f/FEEDBACK</code></p>
@@ -988,7 +1046,7 @@ Deletes a tutorial group with the ID <code>04a</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="view-tutorial-group-code-view-tutorial-group-code"><a class="link" href="#view-tutorial-group-code-view-tutorial-group-code">View Tutorial Group: <code>view-tutorial-group</code></a></h3>
+<h3 id="view-tutorial-group-code-view-tutorial-group-code-2"><a class="link" href="#view-tutorial-group-code-view-tutorial-group-code-2">View Tutorial Group: <code>view-tutorial-group</code></a></h3>
 <div class="paragraph">
 <p>Views a tutorial group&#8217;s details.<br>
 Format: <code>view-tutorial-group id/TUTORIAL_GROUP_ID</code></p>
@@ -1006,7 +1064,7 @@ Displays the <code>04a</code> tutorial group&#8217;s information .</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="add-to-tutorial-group-code-add-to-tutorial-group-code"><a class="link" href="#add-to-tutorial-group-code-add-to-tutorial-group-code">Add to Tutorial Group: <code>add-to-tutorial-group</code></a></h3>
+<h3 id="add-to-tutorial-group-code-add-to-tutorial-group-code-2"><a class="link" href="#add-to-tutorial-group-code-add-to-tutorial-group-code-2">Add to Tutorial Group: <code>add-to-tutorial-group</code></a></h3>
 <div class="paragraph">
 <p>Adds a student to a tutorial group. Note that this command only takes in 1 student at a time.<br>
 Format: <code>add-to-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code></p>
@@ -1296,4 +1354,4 @@ Expected: The tutorial group is deleted. The UI shows <code>[Deleted]</code> nex
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-09 02:58:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-09 17:01:41 UTC</div></div></div></body></html>

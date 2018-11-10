@@ -27,21 +27,22 @@
 <li><a href="#deleting-a-tutorial-group-code-delete-tutorial-group-code">3.12. Deleting a Tutorial Group: <code>delete-tutorial-group</code></a></li>
 <li><a href="#view-tutorial-group-code-view-tutorial-group-code">3.13. View Tutorial Group: <code>view-tutorial-group</code></a></li>
 <li><a href="#add-to-tutorial-group-code-add-to-tutorial-group-code">3.14. Add to Tutorial Group: <code>add-to-tutorial-group</code></a></li>
-<li><a href="#create-attendance-code-create-attendance-code">3.15. Create Attendance: <code>create-attendance</code></a></li>
-<li><a href="#mark-attendance-code-mark-attendance-code">3.16. Mark Attendance: <code>mark-attendance</code></a></li>
-<li><a href="#view-attendance-session-code-view-session-code">3.17. View Attendance Session: <code>view-session</code></a></li>
-<li><a href="#creating-an-assignment-code-create-assignment-code">3.18. Creating an Assignment: <code>create-assignment</code></a></li>
-<li><a href="#update-an-assignment-code-update-assignment-code">3.19. Update an Assignment: <code>update-assignment</code></a></li>
-<li><a href="#deleting-an-assignment-code-delete-assignment-code">3.20. Deleting an Assignment: <code>delete-assignment</code></a></li>
-<li><a href="#feedback-to-student-code-feedback-code">3.21. Feedback to Student: <code>feedback</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">3.22. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.23. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.24. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.25. Exiting the program : <code>exit</code></a></li>
-<li><a href="#filter-by-tutorial-group-code-filter-code">3.26. Filter by Tutorial Group: <code>filter</code></a></li>
-<li><a href="#sort-by-assignment-grade-code-sort-code">3.27. Sort by assignment grade: <code>sort</code></a></li>
-<li><a href="#view-detailed-performance-data-of-student-code-view-performance-code">3.28. View detailed performance data of student: <code>view-performance</code></a></li>
-<li><a href="#saving-the-data">3.29. Saving the data</a></li>
+<li><a href="#remove-from-tutorial-group-code-remove-from-tutorial-group-code">3.15. Remove from Tutorial Group: <code>remove-from-tutorial-group</code></a></li>
+<li><a href="#create-attendance-code-create-attendance-code">3.16. Create Attendance: <code>create-attendance</code></a></li>
+<li><a href="#mark-attendance-code-mark-attendance-code">3.17. Mark Attendance: <code>mark-attendance</code></a></li>
+<li><a href="#view-attendance-session-code-view-session-code">3.18. View Attendance Session: <code>view-session</code></a></li>
+<li><a href="#creating-an-assignment-code-create-assignment-code">3.19. Creating an Assignment: <code>create-assignment</code></a></li>
+<li><a href="#update-an-assignment-code-update-assignment-code">3.20. Update an Assignment: <code>update-assignment</code></a></li>
+<li><a href="#deleting-an-assignment-code-delete-assignment-code">3.21. Deleting an Assignment: <code>delete-assignment</code></a></li>
+<li><a href="#feedback-to-student-code-feedback-code">3.22. Feedback to Student: <code>feedback</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">3.23. Listing entered commands : <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.24. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.25. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.26. Exiting the program : <code>exit</code></a></li>
+<li><a href="#filter-by-tutorial-group-code-filter-code">3.27. Filter by Tutorial Group: <code>filter</code></a></li>
+<li><a href="#sort-by-assignment-grade-code-sort-code">3.28. Sort by assignment grade: <code>sort</code></a></li>
+<li><a href="#view-detailed-performance-data-of-student-code-view-performance-code">3.29. View detailed performance data of student: <code>view-performance</code></a></li>
+<li><a href="#saving-the-data">3.30. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -501,11 +502,13 @@ Format: <code>add-to-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code></p
 <ul>
 <li>
 <p><code>add-to-tutorial-group tg/04a st/A1231231Y</code><br>
-Adds the student with student ID <code>A1231231Y</code> to the tutorial group with an ID of <code>04a</code>.
-=== Remove from Tutorial Group: <code>remove-from-tutorial-group</code></p>
+Adds the student with student ID <code>A1231231Y</code> to the tutorial group with an ID of <code>04a</code>.</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="remove-from-tutorial-group-code-remove-from-tutorial-group-code"><a class="link" href="#remove-from-tutorial-group-code-remove-from-tutorial-group-code">3.15. Remove from Tutorial Group: <code>remove-from-tutorial-group</code></a></h3>
 <div class="paragraph">
 <p>Removes a student from a tutorial group.<br>
 Format: <code>remove-from-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code></p>
@@ -523,7 +526,7 @@ Removes the student with student ID <code>A1231231Y</code> from the tutorial gro
 </div>
 </div>
 <div class="sect2">
-<h3 id="create-attendance-code-create-attendance-code"><a class="link" href="#create-attendance-code-create-attendance-code">3.15. Create Attendance: <code>create-attendance</code></a></h3>
+<h3 id="create-attendance-code-create-attendance-code"><a class="link" href="#create-attendance-code-create-attendance-code">3.16. Create Attendance: <code>create-attendance</code></a></h3>
 <div class="paragraph">
 <p>Creates an attendance listing for a specific tutorial group, identified by its ID.<br>
 Format: <code>create-attendance tg/TUTORIAL_GROUP_ID n/NAME</code></p>
@@ -541,7 +544,7 @@ Creates an attendance named <code>W4 Tutorial</code> for the tutorial group with
 </div>
 </div>
 <div class="sect2">
-<h3 id="mark-attendance-code-mark-attendance-code"><a class="link" href="#mark-attendance-code-mark-attendance-code">3.16. Mark Attendance: <code>mark-attendance</code></a></h3>
+<h3 id="mark-attendance-code-mark-attendance-code"><a class="link" href="#mark-attendance-code-mark-attendance-code">3.17. Mark Attendance: <code>mark-attendance</code></a></h3>
 <div class="paragraph">
 <p>Marks attendance for students from a specific tutorial group and session name, identified by its ID and name. Marking a student&#8217;s attendance a second time will not change the student&#8217;s attendance.<br>
 Format: <code>mark-attendance tg/TUTORIAL_GROUP_ID n/NAME st/STUDENT_ID &#8230;&#8203;</code></p>
@@ -559,7 +562,7 @@ Marks students with IDs <code>A1234567T</code> and <code>A0123456Y</code> as pre
 </div>
 </div>
 <div class="sect2">
-<h3 id="view-attendance-session-code-view-session-code"><a class="link" href="#view-attendance-session-code-view-session-code">3.17. View Attendance Session: <code>view-session</code></a></h3>
+<h3 id="view-attendance-session-code-view-session-code"><a class="link" href="#view-attendance-session-code-view-session-code">3.18. View Attendance Session: <code>view-session</code></a></h3>
 <div class="paragraph">
 <p>Views the session details for a particular session in a tutorial group.<br>
 Format: <code>view-attendance tg/TUTORIAL_GROUP_ID n/SESSION_NAME</code></p>
@@ -577,7 +580,7 @@ Views the details of the session <code>W1Tutorial</code> belonging to the tutori
 </div>
 </div>
 <div class="sect2">
-<h3 id="creating-an-assignment-code-create-assignment-code"><a class="link" href="#creating-an-assignment-code-create-assignment-code">3.18. Creating an Assignment: <code>create-assignment</code></a></h3>
+<h3 id="creating-an-assignment-code-create-assignment-code"><a class="link" href="#creating-an-assignment-code-create-assignment-code">3.19. Creating an Assignment: <code>create-assignment</code></a></h3>
 <div class="paragraph">
 <p>Creates an assignment for a specific tutorial group.<br>
 The <code>MAX_MARKS</code> argument takes in any valid floating point number.<br>
@@ -607,7 +610,7 @@ Creates an assignment named <code>lab1</code> for the tutorial group with an ID 
 </div>
 </div>
 <div class="sect2">
-<h3 id="update-an-assignment-code-update-assignment-code"><a class="link" href="#update-an-assignment-code-update-assignment-code">3.19. Update an Assignment: <code>update-assignment</code></a></h3>
+<h3 id="update-an-assignment-code-update-assignment-code"><a class="link" href="#update-an-assignment-code-update-assignment-code">3.20. Update an Assignment: <code>update-assignment</code></a></h3>
 <div class="paragraph">
 <p>Updates an existing assignment details.<br></p>
 </div>
@@ -653,7 +656,7 @@ Updates an assignment named <code>lab1</code> and maximum marks of <code>40.0</c
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-an-assignment-code-delete-assignment-code"><a class="link" href="#deleting-an-assignment-code-delete-assignment-code">3.20. Deleting an Assignment: <code>delete-assignment</code></a></h3>
+<h3 id="deleting-an-assignment-code-delete-assignment-code"><a class="link" href="#deleting-an-assignment-code-delete-assignment-code">3.21. Deleting an Assignment: <code>delete-assignment</code></a></h3>
 <div class="paragraph">
 <p>Deletes an existing assignment for a specific tutorial group.<br>
 Format: <code>delete-assignment as/ASSIGNMENT_NAME tg/TUTORIAL_GROUP_ID</code></p>
@@ -716,7 +719,7 @@ Views the assignment details for the <code>lab1</code> assignment in the <code>0
 </div>
 </div>
 <div class="sect2">
-<h3 id="feedback-to-student-code-feedback-code"><a class="link" href="#feedback-to-student-code-feedback-code">3.21. Feedback to Student: <code>feedback</code></a></h3>
+<h3 id="feedback-to-student-code-feedback-code"><a class="link" href="#feedback-to-student-code-feedback-code">3.22. Feedback to Student: <code>feedback</code></a></h3>
 <div class="paragraph">
 <p>Adds feedback to a student with a specified Student ID.<br>
 Format: <code>feedback id/STUDENT_ID f/FEEDBACK</code></p>
@@ -734,7 +737,7 @@ Adds the given feedback <code>Is generally attentive during class. However, need
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.22. Listing entered commands : <code>history</code></a></h3>
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.23. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
 Format: <code>history</code></p>
@@ -755,7 +758,7 @@ Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.23. Undoing previous command : <code>undo</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.24. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
 <p>Restores the client to the state before the previous <em>undoable</em> command was executed.<br>
 Format: <code>undo</code></p>
@@ -830,21 +833,21 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.24. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.25. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clears all data from the client. This includes all students, tutorial groups, assignments, etc.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.25. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.26. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="filter-by-tutorial-group-code-filter-code"><a class="link" href="#filter-by-tutorial-group-code-filter-code">3.26. Filter by Tutorial Group: <code>filter</code></a></h3>
+<h3 id="filter-by-tutorial-group-code-filter-code"><a class="link" href="#filter-by-tutorial-group-code-filter-code">3.27. Filter by Tutorial Group: <code>filter</code></a></h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -876,7 +879,7 @@ Shows a list of all the students in the tutorial group with an ID of <code>1</co
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-by-assignment-grade-code-sort-code"><a class="link" href="#sort-by-assignment-grade-code-sort-code">3.27. Sort by assignment grade: <code>sort</code></a></h3>
+<h3 id="sort-by-assignment-grade-code-sort-code"><a class="link" href="#sort-by-assignment-grade-code-sort-code">3.28. Sort by assignment grade: <code>sort</code></a></h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -908,7 +911,7 @@ Displays a list of students in tutorial group <code>1</code> by their grade on a
 </div>
 </div>
 <div class="sect2">
-<h3 id="view-detailed-performance-data-of-student-code-view-performance-code"><a class="link" href="#view-detailed-performance-data-of-student-code-view-performance-code">3.28. View detailed performance data of student: <code>view-performance</code></a></h3>
+<h3 id="view-detailed-performance-data-of-student-code-view-performance-code"><a class="link" href="#view-detailed-performance-data-of-student-code-view-performance-code">3.29. View detailed performance data of student: <code>view-performance</code></a></h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -928,7 +931,7 @@ Displays a list of students in tutorial group <code>1</code> by their grade on a
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.29. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.30. Saving the data</a></h3>
 <div class="paragraph">
 <p>The SuperTA clients' data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -1050,4 +1053,4 @@ e.g. <code>feedback id/A0166733Y f/Likes to sleep in class</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-09 17:01:41 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 06:33:12 UTC</div></div></div></body></html>

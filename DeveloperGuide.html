@@ -33,8 +33,10 @@
 <li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">4.1. Undo/Redo feature</a></li>
-<li><a href="#logging">4.2. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.3. Configuration</a></li>
+<li><a href="#delete-assignment-feature">4.2. Delete Assignment feature</a></li>
+<li><a href="#design-considerations-2">4.3. Design Considerations</a></li>
+<li><a href="#logging">4.4. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.5. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a>
@@ -927,14 +929,91 @@ If the <code>currentStatePointer</code> is at index <code>superTaClientStateList
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.2. Logging</a></h3>
+<h3 id="delete-assignment-feature"><a class="link" href="#delete-assignment-feature">4.2. Delete Assignment feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.2.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>delete-assignment</code> command is facilitated by the <code>DeleteAssignmentCommand</code> class.
+It extends the abstract class <code>Command</code> and is supported by <code>DeleteAssignmentCommandParser</code>,
+and changes made to the <code>Model</code> are done through <code>Model#deleteAssignment()</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>delete-assignment</code> command is executed in the following way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>LogicManager</code> calls <code>parseCommand()</code> of <code>SuperTaClientParser</code>, with the user input as the argument.</p>
+</li>
+<li>
+<p><code>SuperTaClientParser</code> invokes <code>parse()</code> of <code>DeleteAssignmentCommandParser</code>.</p>
+</li>
+<li>
+<p>If arguments are valid, <code>parse</code> extracts <code>fromTutorialGroup</code> and <code>assToDelete</code> strings to instantiate a <code>DeleteAssignmentCommand</code>.</p>
+</li>
+<li>
+<p>The <code>DeleteAssignmentCommand</code> is returned to <code>LogicManager</code>, which calls <code>execute()</code> on it.</p>
+</li>
+<li>
+<p><code>DeleteAssignment</code> calls <code>Model#deleteAssignment()</code> using <code>fromTutorialGroup</code> and <code>assToDelete</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following is a sequence diagram of the <code>delete-assignment</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteAssignmentSdForLogic.png" alt="DeleteAssignmentSdForLogic" width="800">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.3. Design Considerations</a></h3>
+<div class="sect4">
+<h5 id="aspect-implementation-of-code-deleteassignmentcommand-code"><a class="link" href="#aspect-implementation-of-code-deleteassignmentcommand-code">Aspect: Implementation of <code>DeleteAssignmentCommand</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1(current choice):</strong> Store the tutorial group ID and assignment title as String fields in <code>DeleteAssignmentCommand</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement. Does not require instantiating new <code>TutorialGroup</code> and <code>Assignment</code> objects to hold the String values.</p>
+</li>
+<li>
+<p>Cons: Requires that the <code>Model</code> supports finding a tutorial group and assignment within <code>Model#deleteAssignment()</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Wrap the tutorial group ID and assignment title in <code>TutorialGroup</code> and <code>Assignment</code> objects and store them as fields in <code>DeleteAssignmentCommand</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to compare between actual <code>TutorialGroup</code> and <code>Assignment</code> using <code>equals()</code>.</p>
+</li>
+<li>
+<p>Cons: Dependent on the overridden <code>equals()</code> method  in the <code>TutorialGroup</code> and <code>Assignment</code> classes to work as intended.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">4.4. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.3, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.5, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -965,7 +1044,7 @@ If the <code>currentStatePointer</code> is at index <code>superTaClientStateList
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.3. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.5. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2123,4 +2202,4 @@ Expected: An error message showing that there is no such student.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 06:33:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 15:43:01 UTC</div></div></div></body></html>

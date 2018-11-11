@@ -157,15 +157,17 @@ Format: <code>list-tutorial-groups</code></p>
 <h3 id="creating-a-tutorial-group-code-create-tutorial-group-code"><a class="link" href="#creating-a-tutorial-group-code-create-tutorial-group-code">Creating a Tutorial Group: <code>create-tutorial-group</code></a></h3>
 <div class="paragraph">
 <p>Creates a tutorial group with specified name and ID.<br>
-The ID will be used in future commands to reference to this tutorial group.<br>
-Format: <code>create-tutorial-group n/NAME id/TUTORIAL_GROUP_ID</code></p>
+Format: <code>create-tutorial-group n/TUTORIAL-GROUP-NAME id/TUTORIAL-GROUP-ID</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>If there is already a tutorial group with the same identifier, the identifier will have a random suffix appended to it.<br></p>
+<p>The ID will be used in future commands to reference to this tutorial group.</p>
+</li>
+<li>
+<p>If there is already a tutorial group with the same identifier, the identifier will have a random suffix appended to it.</p>
 </li>
 </ul>
 </div>
@@ -191,8 +193,8 @@ Creates a tutorial group named CS2103T with the identifier 04b and a second tuto
 <div class="sect2">
 <h3 id="updating-a-tutorial-group-code-update-tutorial-group-code"><a class="link" href="#updating-a-tutorial-group-code-update-tutorial-group-code">Updating a Tutorial Group: <code>update-tutorial-group</code></a></h3>
 <div class="paragraph">
-<p>Updates a tutorial group&#8217;s details.<br>
-Format: <code>update-tutorial-group id/TUTORIAL_GROUP_ID n/NAME</code></p>
+<p>Updates a tutorial group&#8217;s name.<br>
+Format: <code>update-tutorial-group id/TUTORIAL-GROUP-ID n/TUTORIAL-GROUP-NAME</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -210,7 +212,7 @@ Updates the tutorial group with the ID <code>04a</code> to have an updated name 
 <h3 id="view-tutorial-group-code-view-tutorial-group-code"><a class="link" href="#view-tutorial-group-code-view-tutorial-group-code">View Tutorial Group: <code>view-tutorial-group</code></a></h3>
 <div class="paragraph">
 <p>Views a tutorial group&#8217;s details.<br>
-Format: <code>view-tutorial-group id/TUTORIAL_GROUP_ID</code></p>
+Format: <code>view-tutorial-group id/TUTORIAL-GROUP-ID</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -227,8 +229,19 @@ Displays the <code>04a</code> tutorial group&#8217;s information .</p>
 <div class="sect2">
 <h3 id="add-to-tutorial-group-code-add-to-tutorial-group-code"><a class="link" href="#add-to-tutorial-group-code-add-to-tutorial-group-code">Add to Tutorial Group: <code>add-to-tutorial-group</code></a></h3>
 <div class="paragraph">
-<p>Adds a student to a tutorial group. Note that this command only takes in 1 student at a time.<br>
-Format: <code>add-to-tutorial-group tg/TUTORIAL_GROUP_ID st/STUDENT_ID</code></p>
+<p>Adds a student to a tutorial group.<br>
+Format: <code>add-to-tutorial-group tg/TUTORIAL-GROUP-ID st/STUDENT-ID</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>This command only takes in 1 student at a time.<br></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -246,15 +259,17 @@ Adds the student with student ID <code>A1231231Y</code> to the tutorial group wi
 <h3 id="creating-an-assignment-code-create-assignment-code"><a class="link" href="#creating-an-assignment-code-create-assignment-code">Creating an Assignment: <code>create-assignment</code></a></h3>
 <div class="paragraph">
 <p>Creates an assignment for a specific tutorial group.<br>
-The <code>MAX_MARKS</code> argument takes in any valid floating point number.<br>
-Format: <code>create-assignment tg/TUTORIAL_GROUP_ID n/ASSIGNMENT_NAME m/MAX_MARKS</code></p>
+Format: <code>create-assignment tg/TUTORIAL-GROUP-ID n/ASSIGNMENT-TITLE m/MAXMARKS</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>In future commands, assignments are referenced to by its name.</p>
+<p>The <code>MAXMARKS</code> argument takes in any valid floating point number.</p>
+</li>
+<li>
+<p>In future commands, assignments are referenced to by its title.</p>
 </li>
 </ul>
 </div>
@@ -275,10 +290,8 @@ Creates an assignment named <code>lab1</code> for the tutorial group with an ID 
 <div class="sect2">
 <h3 id="grade-assignment-for-student-code-grade-code"><a class="link" href="#grade-assignment-for-student-code-grade-code">Grade Assignment for Student: <code>grade</code></a></h3>
 <div class="paragraph">
-<p>Enters a grade for a student for a specific assignment in a tutorial group.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>grade tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME st/STUDENT_ID m/MARKS</code></p>
+<p>Enters a grade for a student for a specific assignment in a tutorial group.<br>
+Format: <code>grade tg/TUTORIAL-GROUP-ID as/ASSIGNMENT-TITLE st/STUDENT-ID m/MARKS</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -298,7 +311,7 @@ Creates an assignment named <code>lab1</code> for the tutorial group with an ID 
 <ul>
 <li>
 <p><code>grade tg/04a as/lab1 st/A0166733Y m/40</code><br>
-Creates a grade with marks <code>40</code> for the student with an ID of <code>A0166733Y</code> in the tutorial group <code>04a</code> for the assignment with ID <code>lab1</code>.</p>
+Creates a grade with marks <code>40</code> for the student with an ID of <code>A0166733Y</code> in the tutorial group <code>04a</code> for the assignment with title <code>lab1</code>.</p>
 </li>
 </ul>
 </div>
@@ -307,7 +320,7 @@ Creates a grade with marks <code>40</code> for the student with an ID of <code>A
 <h3 id="view-assignment-details-code-view-assignment-code"><a class="link" href="#view-assignment-details-code-view-assignment-code">View Assignment Details: <code>view-assignment</code></a></h3>
 <div class="paragraph">
 <p>Views an assignment details.<br>
-Format: <code>view-assignment tg/TUTORIAL_GROUP_ID as/ASSIGNMENT_NAME</code></p>
+Format: <code>view-assignment tg/TUTORIAL-GROUP-ID as/ASSIGNMENT-TITLE</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -325,7 +338,7 @@ Views the assignment details for the <code>lab1</code> assignment in the <code>0
 <h3 id="view-attendance-session-code-view-session-code"><a class="link" href="#view-attendance-session-code-view-session-code">View Attendance Session: <code>view-session</code></a></h3>
 <div class="paragraph">
 <p>Views the session details for a particular session in a tutorial group.<br>
-Format: <code>view-attendance tg/TUTORIAL_GROUP_ID n/SESSION_NAME</code></p>
+Format: <code>view-attendance tg/TUTORIAL-GROUP-ID n/SESSION-NAME</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -333,7 +346,7 @@ Format: <code>view-attendance tg/TUTORIAL_GROUP_ID n/SESSION_NAME</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>view-attendance tg/04a n/W1Tutorial</code>
+<p><code>view-attendance tg/04a n/W1Tutorial</code><br>
 Views the details of the session <code>W1Tutorial</code> belonging to the tutorial group <code>04a</code>.</p>
 </li>
 </ul>
@@ -515,4 +528,4 @@ Expected: The tutorial group is deleted. The UI shows <code>[Deleted]</code> nex
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 06:07:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 15:55:54 UTC</div></div></div></body></html>

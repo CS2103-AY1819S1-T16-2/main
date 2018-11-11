@@ -34,9 +34,8 @@
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">4.1. Undo/Redo feature</a></li>
 <li><a href="#delete-assignment-feature">4.2. Delete Assignment feature</a></li>
-<li><a href="#design-considerations-2">4.3. Design Considerations</a></li>
-<li><a href="#logging">4.4. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.5. Configuration</a></li>
+<li><a href="#logging">4.3. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.4. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a>
@@ -968,9 +967,8 @@ and changes made to the <code>Model</code> are done through <code>Model#deleteAs
 </div>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.3. Design Considerations</a></h3>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-implementation-of-code-deleteassignmentcommand-code"><a class="link" href="#aspect-implementation-of-code-deleteassignmentcommand-code">Aspect: Implementation of <code>DeleteAssignmentCommand</code></a></h5>
 <div class="ulist">
@@ -1005,15 +1003,16 @@ and changes made to the <code>Model</code> are done through <code>Model#deleteAs
 </div>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.4. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.3. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.5, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.4, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1044,7 +1043,7 @@ and changes made to the <code>Model</code> are done through <code>Model#deleteAs
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.5. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.4. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1736,7 +1735,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases, the <strong>System</strong> is the <code>SuperTA Client</code> and the <strong>Actor</strong> is <code>TA</code>.)</p>
+<p>(For all use cases, the <strong>System</strong> is the <code>SuperTA Client</code> and the <strong>User</strong> is <code>TA</code>.)</p>
 </div>
 <h3 id="uc01-delete-student" class="discrete">UC01 - Delete student</h3>
 <div class="paragraph">
@@ -1748,13 +1747,13 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to list students</p>
 </li>
 <li>
-<p>SuperTA shows a list of students</p>
+<p>System shows a list of students</p>
 </li>
 <li>
 <p>User requests to delete a specific student in the list</p>
 </li>
 <li>
-<p>SuperTA deletes the student</p>
+<p>System deletes the student</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1762,7 +1761,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </ol>
 </div>
 <div class="paragraph">
-<p><strong>Extensions</strong></p>
+<p><strong>Extensions:</strong></p>
 </div>
 <div class="ulist none">
 <ul class="none">
@@ -1777,7 +1776,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist">
 <ul>
 <li>
-<p>2a1. SuperTA shows an error message.</p>
+<p>2a1. System shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -1805,7 +1804,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </ol>
 </div>
 <div class="paragraph">
-<p><strong>Extensions</strong></p>
+<p><strong>Extensions:</strong></p>
 </div>
 <div class="ulist none">
 <ul class="none">
@@ -1820,6 +1819,174 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>1a2. User re-enter student details.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="uc03-grade-assignment" class="discrete">UC03 - Grade Assignment</h3>
+<div class="paragraph">
+<p><strong>MSS:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User views a tutorial group.</p>
+</li>
+<li>
+<p>System displays the tutorial group.</p>
+</li>
+<li>
+<p>User creates assignment in tutorial group.</p>
+</li>
+<li>
+<p>System creates assignment.</p>
+</li>
+<li>
+<p>User enters grade of student to be graded for an assignment.</p>
+</li>
+<li>
+<p>System grades the assignment for the student.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions:</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. User enters invalid tutorial group ID.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. System displays an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. User enters invalid details for new assignment.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. System displays an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>5a. User enters invalid grade/student/assignment/tutorial group.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>5a1. System displays an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 5.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="uc04-mark-attendance" class="discrete">UC04 - Mark Attendance</h3>
+<div class="paragraph">
+<p><strong>MSS:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User creates attendance session in tutorial group.</p>
+</li>
+<li>
+<p>System creates attendance session.</p>
+</li>
+<li>
+<p>User enters ID for student to mark attendance for the session.</p>
+</li>
+<li>
+<p>System marks student&#8217;s attendance for the session.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions:</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. User enters invalid details for new attendance session.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. System displays an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. User enters invalid student/session.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. System displays an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="uc05-add-feedback-for-student" class="discrete">UC05 - Add feedback for student</h3>
+<div class="paragraph">
+<p><strong>MSS:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters feedback for student.</p>
+</li>
+<li>
+<p>System creates feedback for student.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions:</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. User enters invalid student/empty feedback.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. System displays an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -2202,4 +2369,4 @@ Expected: An error message showing that there is no such student.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 03:48:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 06:07:04 UTC</div></div></div></body></html>

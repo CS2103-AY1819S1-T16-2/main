@@ -665,7 +665,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>SuperTaClient
 <div class="content">
 <img src="images/TutorialGroupDiagram.png" alt="TutorialGroupDiagram" width="800">
 </div>
-<div class="title">Figure 11. Structure of the Storage Component</div>
+<div class="title">Figure 11. Structure of the TutorialGroup Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-T16-2/main/src/main/java/seedu/superta/tutorialgroup/TutorialGroup.java"><code>TutorialGroup.java</code></a></p>
@@ -702,7 +702,9 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>SuperTaClient
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>TutorialGroup</code> model houses all other object instances that are crucial to the operation of the client. This is done because it makes logical sense - <code>Student</code> s, <code>Assignment</code> s, and <code>Session</code> s should belong to a <code>TutorialGroup</code> .
+<div class="paragraph">
+<p>The <code>TutorialGroup</code> model houses all other object instances that are crucial to the operation of the client. This is done because it makes logical sense - <code>Student</code> s, <code>Assignment</code> s, and <code>Session</code> s should belong to a <code>TutorialGroup</code> .</p>
+</div>
 </td>
 </tr>
 </table>
@@ -714,6 +716,29 @@ The <code>TutorialGroup</code> model houses all other object instances that are 
 </div>
 <div class="paragraph">
 <p>This is an example of the use case of a <code>TutorialGroup</code>. In this object diagram, we have a <code>TutorialGroup</code> with the name <code>Studio04A</code> and the ID <code>04a</code>. It holds lists of <code>Student</code> s, <code>Assignment</code> s, and <code>Session</code> s in its appropriate lists. Each entity is not coupled with each other - it uses the <code>StudentId</code> to find out which <code>Student</code> is associated with it. For example, The <code>GradeEntry</code> object composes of a <code>StudentId</code> object, which will allow other components to find out which is the underlying <code>Student</code> model with this <code>StudentId</code>. This is done so that we don&#8217;t have to update each entity with updated copies of a <code>Student</code> when the user triggers an update event.</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.7.1. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-alternative-implementation-methods"><a class="link" href="#aspect-alternative-implementation-methods">Aspect: Alternative Implementation Methods</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1</strong>: Store <code>Assignment</code> s, <code>Session</code> s, and <code>Student</code> s in a normalised manner - that is, the <code>ModelManager</code> would instead contain lists of all of these entities. Every <code>TutorialGroup</code> would then reference an identifier if it wanted a reference to that entity.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Any updates to an underlying model would be propagated to every <code>TutorialGroup</code> referencing it. Normalised data is also easier to reference. Future classes can also reference these with no problem.</p>
+</li>
+<li>
+<p>Cons: This implementation will require additional layers of abstraction, and will require many changes to the model.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -863,7 +888,7 @@ If the <code>currentStatePointer</code> is at index <code>superTaClientStateList
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.1.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -973,7 +998,7 @@ and changes made to the <code>Model</code> are done through <code>Model#deleteAs
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.2.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-implementation-of-code-deleteassignmentcommand-code"><a class="link" href="#aspect-implementation-of-code-deleteassignmentcommand-code">Aspect: Implementation of <code>DeleteAssignmentCommand</code></a></h5>
 <div class="ulist">
@@ -1050,7 +1075,7 @@ and it is triggered when the user enters <code>find</code> into <code>SuperTaCli
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.3.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-code-findcommandparser-code-parse-predicates"><a class="link" href="#aspect-how-code-findcommandparser-code-parse-predicates">Aspect: How <code>FindCommandParser</code> parse predicates</a></h5>
 <div class="ulist">
@@ -1162,7 +1187,7 @@ In this implementation, it is assumed that there is a valid tutorial group and a
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.4.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-implementation-of-code-updateassignmentdescriptor-code-in-code-updateassignmentcommand-code"><a class="link" href="#aspect-implementation-of-code-updateassignmentdescriptor-code-in-code-updateassignmentcommand-code">Aspect: Implementation of <code>UpdateAssignmentDescriptor</code> in <code>UpdateAssignmentCommand</code></a></h5>
 <div class="ulist">
@@ -1302,7 +1327,7 @@ and changes made to the <code>Model</code> are done through <code>Model#markAtte
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.5.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-implementation-of-code-markattendancecommand-code"><a class="link" href="#aspect-implementation-of-code-markattendancecommand-code">Aspect: Implementation of <code>MarkAttendanceCommand</code></a></h5>
 <div class="ulist">
@@ -2845,4 +2870,4 @@ Expected: An error message showing that there is no such student.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 03:30:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 05:34:14 UTC</div></div></div></body></html>

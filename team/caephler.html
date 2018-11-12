@@ -79,7 +79,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Minor enhancement</strong>: Added various view commands such as <code>view-session</code> and <code>list-tutorial-groups</code> which will trigger UI actions.</p>
+<p><strong>Minor enhancement</strong>: Added various view commands such as <code>view-session</code> and <code>list-tutorial-groups</code> which will trigger display relevant information in the User Interface.</p>
 </li>
 <li>
 <p><strong>Code contributed</strong>: <a href="https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&amp;search=caephler">RepoSense collated code</a></p>
@@ -115,7 +115,7 @@
 <p>Improve Test Coverage (Pull Requests <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/41">#41</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/66">#66</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/101">#101</a>)</p>
 </li>
 <li>
-<p>Bug fixes (in various PRs).</p>
+<p>Bug fixes (Pull Requests <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/145">#145</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/144">#144</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/141">#141</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/138">#138</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/135">#135</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/59">#59</a>)</p>
 </li>
 <li>
 <p>Reviewed many team members' pull requests.</p>
@@ -455,7 +455,7 @@ Views the details of the session <code>W1Tutorial</code> belonging to the tutori
 <div class="content">
 <img src="../images/TutorialGroupDiagram.png" alt="TutorialGroupDiagram" width="800">
 </div>
-<div class="title">Figure 2. Structure of the Storage Component</div>
+<div class="title">Figure 2. Structure of the TutorialGroup Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/superta/tutorialgroup/TutorialGroup.java"><code>TutorialGroup.java</code></a></p>
@@ -492,7 +492,9 @@ Views the details of the session <code>W1Tutorial</code> belonging to the tutori
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>TutorialGroup</code> model houses all other object instances that are crucial to the operation of the client. This is done because it makes logical sense - <code>Student</code> s, <code>Assignment</code> s, and <code>Session</code> s should belong to a <code>TutorialGroup</code> .
+<div class="paragraph">
+<p>The <code>TutorialGroup</code> model houses all other object instances that are crucial to the operation of the client. This is done because it makes logical sense - <code>Student</code> s, <code>Assignment</code> s, and <code>Session</code> s should belong to a <code>TutorialGroup</code> .</p>
+</div>
 </td>
 </tr>
 </table>
@@ -504,6 +506,29 @@ The <code>TutorialGroup</code> model houses all other object instances that are 
 </div>
 <div class="paragraph">
 <p>This is an example of the use case of a <code>TutorialGroup</code>. In this object diagram, we have a <code>TutorialGroup</code> with the name <code>Studio04A</code> and the ID <code>04a</code>. It holds lists of <code>Student</code> s, <code>Assignment</code> s, and <code>Session</code> s in its appropriate lists. Each entity is not coupled with each other - it uses the <code>StudentId</code> to find out which <code>Student</code> is associated with it. For example, The <code>GradeEntry</code> object composes of a <code>StudentId</code> object, which will allow other components to find out which is the underlying <code>Student</code> model with this <code>StudentId</code>. This is done so that we don&#8217;t have to update each entity with updated copies of a <code>Student</code> when the user triggers an update event.</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-alternative-implementation-methods"><a class="link" href="#aspect-alternative-implementation-methods">Aspect: Alternative Implementation Methods</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1</strong>: Store <code>Assignment</code> s, <code>Session</code> s, and <code>Student</code> s in a normalised manner - that is, the <code>ModelManager</code> would instead contain lists of all of these entities. Every <code>TutorialGroup</code> would then reference an identifier if it wanted a reference to that entity.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Any updates to an underlying model would be propagated to every <code>TutorialGroup</code> referencing it. Normalised data is also easier to reference. Future classes can also reference these with no problem.</p>
+</li>
+<li>
+<p>Cons: This implementation will require additional layers of abstraction, and will require many changes to the model.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -558,5 +583,47 @@ Expected: The tutorial group is deleted. The UI shows <code>[Deleted]</code> nex
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="grading-a-student"><a class="link" href="#grading-a-student">Grading a student</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Grading a student</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Have one tutorial group with an ID of <code>04a</code>, and an assignment that belongs to it with the name <code>lab1</code> with a maximum mark of <code>40.0</code>. Also, a student with a student ID of <code>A0166733Y</code> should be added to the tutorial group.<br>
+View the assignment in the tutorial group using the <code>view-assignment tg/04a as/lab1</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0166733Y as/lab1 m/35.0</code><br>
+Expected: The student gets graded <code>35.0</code> out of <code>40.0</code> marks. If you are in the detailed tutorial group or assignment screen, the UI should be updated accordingly.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0166733Y as/lab1 m/40.1</code><br>
+Expected: An error message should be shown in the status message, because <code>40.1</code> is greater than the maximum marks of <code>lab1</code>.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0166733Y as/lab1 m/-1</code><br>
+Expected: An error message will be shown, since negative marks are invalid.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/05a st/A0166733Y as/lab1 m/30</code><br>
+Expected: An error message showing that there is no such tutorial group.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0123456T as/lab1 m/30</code><br>
+Expected: An error message showing that there is no such student in this tutorial group. You can also try this when there is a student in the main directory with this ID, but this student is not added to the tutorial group.</p>
+</li>
+<li>
+<p>Test case: <code>grade tg/04a st/A0166733Y as/lab2 m/30</code><br>
+Expected: An error message showing that there is no such assignment.</p>
+</li>
+</ol>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 03:30:46 UTC</div></div></div></body></html>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 05:34:14 UTC</div></div></div></body></html>

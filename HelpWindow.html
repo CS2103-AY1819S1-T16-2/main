@@ -192,8 +192,15 @@ Format: <code>list</code></p>
 <div class="sect2">
 <h3 id="listing-all-tutorial-groups-code-list-tutorial-groups-code"><a class="link" href="#listing-all-tutorial-groups-code-list-tutorial-groups-code">3.4. Listing all tutorial groups: <code>list-tutorial-groups</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all the tutorial groups, and reflects it on the UI.<br>
-Format: <code>list-tutorial-groups</code></p>
+<p>Shows a list of all the tutorial groups, and reflects it on the UI.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Ui.png" alt="Ui" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>list-tutorial-groups</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -387,7 +394,15 @@ Selects the 1st student in the results of the <code>find</code> command.</p>
 <h3 id="viewing-a-student-s-information-code-view-code"><a class="link" href="#viewing-a-student-s-information-code-view-code">3.9. Viewing a student&#8217;s information: <code>view</code></a></h3>
 <div class="paragraph">
 <p>Views a student&#8217;s information and any feedback that is left for him.<br>
-Format: <code>view id/STUDENT-ID</code></p>
+The UI should update to show a screen like this.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/View.png" alt="View" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>view id/STUDENT-ID</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -478,7 +493,15 @@ Deletes a tutorial group with the ID <code>04a</code>.</p>
 <h3 id="view-tutorial-group-code-view-tutorial-group-code"><a class="link" href="#view-tutorial-group-code-view-tutorial-group-code">3.13. View Tutorial Group: <code>view-tutorial-group</code></a></h3>
 <div class="paragraph">
 <p>Views a tutorial group&#8217;s details.<br>
-Format: <code>view-tutorial-group id/TUTORIAL-GROUP-ID</code></p>
+The UI should show this screen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ViewTutorialGroup.png" alt="ViewTutorialGroup" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>view-tutorial-group id/TUTORIAL-GROUP-ID</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -591,8 +614,16 @@ Marks students with IDs <code>A1234567T</code> and <code>A0123456Y</code> as pre
 <div class="sect2">
 <h3 id="view-attendance-session-code-view-session-code"><a class="link" href="#view-attendance-session-code-view-session-code">3.18. View Attendance Session: <code>view-session</code></a></h3>
 <div class="paragraph">
-<p>Views the session details for a particular session in a tutorial group.<br>
-Format: <code>view-attendance tg/TUTORIAL-GROUP-ID n/SESSION-NAME</code></p>
+<p>Views the session details for a particular attendance session in a tutorial group.<br>
+The UI should show this screen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ViewSession.png" alt="ViewSession" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>view-session tg/TUTORIAL-GROUP-ID n/SESSION-NAME</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -600,7 +631,7 @@ Format: <code>view-attendance tg/TUTORIAL-GROUP-ID n/SESSION-NAME</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>view-attendance tg/04a n/W1Tutorial</code><br>
+<p><code>view-session tg/04a n/W1Tutorial</code><br>
 Views the details of the session <code>W1Tutorial</code> belonging to the tutorial group <code>04a</code>.</p>
 </li>
 </ul>
@@ -730,7 +761,15 @@ Creates a grade with marks <code>40</code> for the student with an ID of <code>A
 <h3 id="view-assignment-details-code-view-assignment-code"><a class="link" href="#view-assignment-details-code-view-assignment-code">3.23. View Assignment Details: <code>view-assignment</code></a></h3>
 <div class="paragraph">
 <p>Views an assignment details.<br>
-Format: <code>view-assignment tg/TUTORIAL-GROUP-ID as/ASSIGNMENT-TITLE</code></p>
+The UI should show this screen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ViewAssignment.png" alt="ViewAssignment" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Format: <code>view-assignment tg/TUTORIAL-GROUP-ID as/ASSIGNMENT-TITLE</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1086,4 +1125,4 @@ e.g. <code>feedback id/A0166733Y f/Likes to sleep in class</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 02:30:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 03:30:46 UTC</div></div></div></body></html>

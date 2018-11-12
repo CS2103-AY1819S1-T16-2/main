@@ -59,7 +59,7 @@ It is written in Java, and it is equipped with various Continuous Integration/ D
 </li>
 <li>
 <p>Highlights: This enhancement is able to take in multiple student IDs as user input, allowing the attendance of multiple students to be marked a the same time. Also, this enhancement involves creating the Presence enumeration to properly encapsulate the attendance of students using fixed and constant values.
-The implementation of it needed to account for various exceptions, such as when the tutorial group is invalid, when the session does not exist, as well as when the attendance of students are already marked.</p>
+The implementation of these commands needed to account for various exceptions, such as when the tutorial group is invalid, when the session does not exist, as well as when the attendance of students are already marked.</p>
 </li>
 </ul>
 </div>
@@ -75,7 +75,7 @@ The implementation of it needed to account for various exceptions, such as when 
 <p>Justification: This feature improves the usability of the SuperTA client as TAs are better able to craft personalized feedback for students to help with their studies.</p>
 </li>
 <li>
-<p>Highlights: This enhancement involves modifying the Student class and adding a new data field, Feedback to it. New feedback can also be easily added to a Student without overwriting existing feedback, as feedback object have been modelled as array elements within the student instead.</p>
+<p>Highlights: This enhancement involves modifying the Student class and adding a new data field, Feedback to it. New feedback can also be easily added to a Student without overwriting existing feedback, as feedback objects have been modelled as array elements within the student object instead.</p>
 </li>
 </ul>
 </div>
@@ -175,11 +175,13 @@ Format: <code>feedback id/STUDENT-ID f/FEEDBACK</code></p>
 <ul>
 <li>
 <p><code>feedback id/A1234566T f/Is generally attentive during class. However, needs to speak up more.</code><br>
-Adds the given feedback <code>Is generally attentive during class. However, needs to speak up more.</code> to the student with Student ID <code>A1234566T</code>.
-=== Create Attendance: <code>create-attendance</code></p>
+Adds the given feedback <code>Is generally attentive during class. However, needs to speak up more.</code> to the student with Student ID <code>A1234566T</code>.</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="create-attendance-code-create-attendance-code"><a class="link" href="#create-attendance-code-create-attendance-code">Create Attendance: <code>create-attendance</code></a></h3>
 <div class="paragraph">
 <p>Creates an attendance listing for a specific tutorial group, identified by its ID.<br>
 Format: <code>create-attendance tg/TUTORIAL-GROUP-ID n/SESSION-NAME</code></p>
@@ -460,4 +462,4 @@ Expected: An error message should be displayed, saying that the student is not i
 <hr>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 09:10:11 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 10:01:43 UTC</div></div></div></body></html>

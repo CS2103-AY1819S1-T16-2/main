@@ -10,8 +10,35 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>SuperTA is a desktop app for Teaching Assistants and Professors of NUS School of Computing to manage their tutorials and students. It is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI).
-It is written in Java, and it is equipped with various Continuous Integration/Deployment tools such as AppVeyor and Travis CI. JUnit tests have also been implemented to achieve a code coverage of roughly 80%.</p>
+<p>The purpose of this project portfolio is to document my contributions I have made for the project, SuperTA.</p>
+</div>
+<div class="paragraph">
+<p>SuperTA is a desktop app for Teaching Assistants and Professors of NUS School of Computing to manage their tutorials and students.
+This app has been developed from an existing software product by my CS2103T team and helps TAs with their administrative tasks.
+It is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI).
+It is written in Java, and it is equipped with various Continuous Integration/ Deployment tools such as AppVeyor and Travis CI.</p>
+</div>
+<div class="paragraph">
+<p>Some significant features of SuperTA include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Creating of tutorial groups</p>
+</li>
+<li>
+<p>Adding of students into tutorial groups</p>
+</li>
+<li>
+<p>Marking attendance of students</p>
+</li>
+<li>
+<p>Grading assignments of students</p>
+</li>
+<li>
+<p>Giving feedback to students</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -67,6 +94,16 @@ The implementation of it needed to account for various exceptions, such as when 
 <div class="ulist">
 <ul>
 <li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reposense: Created config.json file and modified author names to ensure code is correctly attributed</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p>Enhancements to existing features:</p>
 <div class="ulist">
 <ul>
@@ -97,10 +134,10 @@ The implementation of it needed to account for various exceptions, such as when 
 <div class="ulist">
 <ul>
 <li>
-<p>Reposense: Created config.json file and modified with author names to ensure code is correctly attributed</p>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/91">#91</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/90">#90</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/73">#73</a></p>
 </li>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/91">#91</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/90">#90</a>, <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/73">#73</a></p>
+<p>Reported bugs and fixed them: <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/167">#167</a></p>
 </li>
 </ul>
 </div>
@@ -126,7 +163,23 @@ The implementation of it needed to account for various exceptions, such as when 
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="create-attendance-code-create-attendance-code"><a class="link" href="#create-attendance-code-create-attendance-code">Create Attendance: <code>create-attendance</code></a></h3>
+<h3 id="feedback-to-student-code-feedback-code"><a class="link" href="#feedback-to-student-code-feedback-code">Feedback to Student: <code>feedback</code></a></h3>
+<div class="paragraph">
+<p>Adds feedback to a student with a specified Student ID.<br>
+Format: <code>feedback id/STUDENT-ID f/FEEDBACK</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>feedback id/A1234566T f/Is generally attentive during class. However, needs to speak up more.</code><br>
+Adds the given feedback <code>Is generally attentive during class. However, needs to speak up more.</code> to the student with Student ID <code>A1234566T</code>.
+=== Create Attendance: <code>create-attendance</code></p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>Creates an attendance listing for a specific tutorial group, identified by its ID.<br>
 Format: <code>create-attendance tg/TUTORIAL-GROUP-ID n/SESSION-NAME</code></p>
@@ -326,9 +379,85 @@ and changes made to the <code>Model</code> are done through <code>Model#markAtte
 </li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Instructions for Manual Testing</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="creating-an-attendance-session"><a class="link" href="#creating-an-attendance-session">Creating an attendance session</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Creating an attendance session</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Have one tutorial group with an ID of <code>04a</code>.<br>
+View the tutorial group using the <code>view-tutorial-group id/04a</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>create-attendance tg/04a n/W4 Tutorial</code><br>
+Expected: An attendance session should be created. If you are on the detailed tutorial group screen, the UI should update accordingly.</p>
+</li>
+<li>
+<p>Test case: <code>create-attendance tg/05a n/W4 Tutorial</code><br>
+Expected: An error message should be displayed, saying that there is no such tutorial group.</p>
+</li>
+<li>
+<p>Test case: <code>create-attendance tg/04a n/W4 Tutorial</code><br>
+Expected: An error message should be displayed, saying that the attendance session already exists in the tutorial group.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="marking-an-attendance"><a class="link" href="#marking-an-attendance">Marking an attendance</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Marking an attendance</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Have one tutorial group with an ID of <code>04a</code>, an attendance session with name of <code>W4 Tutorial</code> and 3 students with student IDs <code>A0166733Y</code>, <code>A0123456Y</code> and <code>A0144582N</code> in the tutorial group.<br>
+View the session in the tutorial group using the <code>view-session tg/04a n/W4 Tutorial</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>mark-attendance tg/04a n/W4 Tutorial st/A0166733Y</code><br>
+Expected: The student with id <code>A0166733Y</code> should now be in the 'Attended' column.</p>
+</li>
+<li>
+<p>Test case: <code>mark-attendance tg/04a n/W4 Tutorial st/A0123456Y st/A0144582N</code><br>
+Expected: Both students with ids <code>A0123456Y</code> and <code>A0144582N</code> should now be in the 'Attended' column, as <code>mark-attendance</code> supports marking multiple students.</p>
+</li>
+<li>
+<p>Test case: Duplicate ID - <code>mark-attendance tg/04a n/W4 Tutorial st/A0166733Y</code><br>
+Expected: An error message should be displayed, saying that the student&#8217;s attendance is already marked.</p>
+</li>
+<li>
+<p>Test case: <code>mark-attendance tg/05a n/W4 Tutorial st/A0166733Y</code><br>
+Expected: An error message should be displayed, saying that there is no such tutorial group.</p>
+</li>
+<li>
+<p>Test case: <code>mark-attendance tg/04a n/W4 Lab st/A0166733Y</code><br>
+Expected: An error message should be displayed, saying that the session does not exist.</p>
+</li>
+<li>
+<p>Test case: <code>mark-attendance tg/04a n/W4 Tutorial st/A1234560T</code><br>
+Expected: An error message should be displayed, saying that the student is not in the tutorial group.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
 <hr>
 </div>
 </div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 08:57:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 09:10:11 UTC</div></div></div></body></html>

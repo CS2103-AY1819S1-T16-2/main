@@ -419,6 +419,10 @@ Expected: An attendance session should be created. If you are on the detailed tu
 <p>Test case: <code>create-attendance tg/05a n/W4 Tutorial</code><br>
 Expected: An error message should be displayed, saying that there is no such tutorial group.</p>
 </li>
+<li>
+<p>Test case: <code>create-attendance tg/04a n/W4 Tutorial</code><br>
+Expected: An error message should be displayed, saying that the attendance session already exists in the tutorial group.</p>
+</li>
 </ol>
 </div>
 </li>
@@ -434,12 +438,16 @@ Expected: An error message should be displayed, saying that there is no such tut
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: Have one tutorial group with an ID of <code>04a</code>, an attendance session with name of <code>W4 Tutorial</code> and a student with a student ID of <code>A0166733Y</code> in the tutorial group.<br>
+<p>Prerequisites: Have one tutorial group with an ID of <code>04a</code>, an attendance session with name of <code>W4 Tutorial</code> and 3 students with student IDs <code>A0166733Y</code>, <code>A0123456Y</code> and <code>A0144582N</code> in the tutorial group.<br>
 View the session in the tutorial group using the <code>view-session tg/04a n/W4 Tutorial</code> command.</p>
 </li>
 <li>
 <p>Test case: <code>mark-attendance tg/04a n/W4 Tutorial st/A0166733Y</code><br>
-Expected: The student should now be in the 'Attended' column.</p>
+Expected: The student with id <code>A0166733Y</code> should now be in the 'Attended' column.</p>
+</li>
+<li>
+<p>Test case: <code>mark-attendance tg/04a n/W4 Tutorial st/A0123456Y st/A0144582N</code><br>
+Expected: Both students with ids <code>A0123456Y</code> and <code>A0144582N</code> should now be in the 'Attended' column, as <code>mark-attendance</code> supports marking multiple students.</p>
 </li>
 <li>
 <p>Test case: Duplicate ID - <code>mark-attendance tg/04a n/W4 Tutorial st/A0166733Y</code><br>
@@ -454,7 +462,7 @@ Expected: An error message should be displayed, saying that there is no such tut
 Expected: An error message should be displayed, saying that the session does not exist.</p>
 </li>
 <li>
-<p>Test case: <code>mark-attendance tg/04a n/W4 Tutorial st/A123456T</code><br>
+<p>Test case: <code>mark-attendance tg/04a n/W4 Tutorial st/A1234560T</code><br>
 Expected: An error message should be displayed, saying that the student is not in the tutorial group.</p>
 </li>
 </ol>
@@ -490,4 +498,4 @@ Expected: An error message showing that there is no such student.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 08:57:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 09:10:11 UTC</div></div></div></body></html>

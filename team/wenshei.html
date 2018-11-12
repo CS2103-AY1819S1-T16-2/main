@@ -39,12 +39,22 @@
 <p><strong>Minor enhancement</strong>: added a delete-tutorial-group command which allows the user to delete an existing tutorial group. (Pull request <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/84">#84</a>)</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [RepoSense collated code](<a href="https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&amp;search=wenshei" class="bare">https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&amp;search=wenshei</a>)</p>
+<p><strong>Code contributed</strong>: <a href="https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&amp;search=wenshei">RepoSense collated code</a></p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
 <div class="ulist">
 <ul>
+<li>
+<p>Enhancements:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Improved test coverage (Pull request <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/157">#157</a>)</p>
+</li>
+</ul>
+</div>
+</li>
 <li>
 <p>Project Management:</p>
 <div class="ulist">
@@ -60,10 +70,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Added team&#8217;s ideas into relevant appendixes: <a href="https://github.com/CS2103-AY210819S1-T16-2/main/pull/4">#4</a></p>
+<p>Added team&#8217;s ideas into relevant appendixes. (Pull request <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/4">#4</a>)</p>
 </li>
 <li>
-<p>Modified old diagrams in the Developer Guide to correspond with SuperTA: <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/100">#100</a></p>
+<p>Modified old diagrams in the Developer Guide to correspond with SuperTA. Pull request <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/100">#100</a>)</p>
 </li>
 </ul>
 </div>
@@ -73,7 +83,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/97">#97</a></p>
+<p>PRs reviewed (with non-trivial review comments) (Pull request <a href="https://github.com/CS2103-AY1819S1-T16-2/main/pull/97">#97</a>)</p>
 </li>
 </ul>
 </div>
@@ -226,5 +236,176 @@ and changes made to the <code>Model</code> are done through <code>Model#deleteAs
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="use-cases"><a class="link" href="#use-cases">Use Cases:</a></h3>
+<h3 id="uc04-grade-assignment" class="discrete">UC04 - Grade Assignment</h3>
+<div class="paragraph">
+<p><strong>MSS:</strong></p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 05:34:14 UTC</div></div></div></body></html>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User views a tutorial group.</p>
+</li>
+<li>
+<p>System displays the tutorial group.</p>
+</li>
+<li>
+<p>User creates assignment in tutorial group.</p>
+</li>
+<li>
+<p>System creates assignment.</p>
+</li>
+<li>
+<p>User enters grade of student to be graded for an assignment.</p>
+</li>
+<li>
+<p>System grades the assignment for the student.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions:</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. User enters invalid tutorial group ID.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. System displays an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. User enters invalid details for new assignment.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. System displays an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>5a. User enters invalid grade/student/assignment/tutorial group.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>5a1. System displays an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 5.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="uc05-mark-attendance" class="discrete">UC05 - Mark Attendance</h3>
+<div class="paragraph">
+<p><strong>MSS:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User creates attendance session in tutorial group.</p>
+</li>
+<li>
+<p>System creates attendance session.</p>
+</li>
+<li>
+<p>User enters ID for student to mark attendance for the session.</p>
+</li>
+<li>
+<p>System marks student&#8217;s attendance for the session.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions:</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. User enters invalid details for new attendance session.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. System displays an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. User enters invalid student/session.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. System displays an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="uc06-add-feedback-for-student" class="discrete">UC06 - Add feedback for student</h3>
+<div class="paragraph">
+<p><strong>MSS:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters feedback for student.</p>
+</li>
+<li>
+<p>System creates feedback for student.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions:</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. User enters invalid student/empty feedback.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. System displays an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 08:03:24 UTC</div></div></div></body></html>
